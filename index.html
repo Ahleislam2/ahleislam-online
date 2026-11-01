@@ -5,8 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ahl-e-Islam — Namaz Timings, Zakat Calculator, Hijri Converter, Surahs, Hadith</title>
 <meta name="description" content="Ahl-e-Islam: city-wise namaz timings for Pakistan, zakat calculator with tola nisab, Hijri date converter, short Surahs, Hadith and Khatam Sharif — authentic references, one clean Islamic site.">
+<link rel="canonical" href="https://ahleislam.online/">
+<meta property="og:title" content="Ahl-e-Islam — Namaz Timings, Zakat, Hijri, Quran, Hadith">
+<meta property="og:description" content="City-wise namaz timings, zakat calculator, Hijri converter, short Surahs and Hadith — authentic references, one clean Islamic site.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -14,23 +18,25 @@
   <div class="wrap">
     <div class="brand-row">
       <div class="brand">
-        <div class="mark">ا</div>
-        <div>
-          <h1>Ahl-e-Islam</h1>
-          <p>Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
-        </div>
+        <img class="brand-logo" src="assets/logo.png" alt="Ahl-e-Islam — ahleislam.online logo">
+        <p class="brand-tag" data-t="brandTag">Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
+        <h1 class="sr-only">Ahl-e-Islam — Namaz Timings, Zakat Calculator, Hijri Converter, Surahs, Hadith</h1>
       </div>
       <nav class="nav" aria-label="Sections">
-        <a href="#timings">Namaz</a>
-        <a href="#hijri-tool">Hijri</a>
-        <a href="#sec-zakat">Zakat</a>
-        <a href="#sec-khatam">Khatam</a>
-        <a href="#sec-surahs">Surahs</a>
-        <a href="#sec-hadith">Hadith</a>
+        <a href="#timings" data-t="navNamaz">Namaz</a>
+        <a href="#hijri-tool" data-t="navHijri">Hijri</a>
+        <a href="#sec-zakat" data-t="navZakat">Zakat</a>
+        <a href="#sec-khatam" data-t="navKhatam">Khatam</a>
+        <a href="#sec-surahs" data-t="navSurahs">Surahs</a>
+        <a href="#sec-hadith" data-t="navHadith">Hadith</a>
       </nav>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="lang-en" class="active" type="button">English</button>
+        <button id="lang-ur" type="button">اردو</button>
+      </div>
     </div>
     <div class="search-box">
-      <input id="site-search" type="search" placeholder="Search the site — try “Khatam Sharif”, “Zakat”, “Lahore namaz”… " aria-label="Search the site">
+      <input id="site-search" type="search" data-t="searchPh" placeholder="Search the site — try “Khatam Sharif”, “Zakat”, “Lahore namaz”… " aria-label="Search the site">
       <div class="suggest" id="suggest"></div>
     </div>
   </div>
@@ -40,14 +46,14 @@
   <!-- AAJ — answer on top (Islamful pattern: jawab sab se upar) -->
   <section class="today" aria-label="Today">
     <div class="today-date">
-      <span class="eyebrow">Aaj ki tareekh</span>
+      <span class="eyebrow" data-t="todayLabel">Today’s date</span>
       <div class="hijri-big" id="hijri-date">…</div>
       <div class="greg" id="greg-date">…</div>
-      <span class="pill">Hijri date computed (tabular) — local moon-sighting date can differ by about 1 day</span>
+      <span class="pill" data-t="hijriNote">Hijri date computed (tabular) — local moon-sighting date can differ by about 1 day</span>
     </div>
     <!-- Next-prayer hero card (deen.pk pattern: dark card, countdown, progress) -->
     <div class="next-card">
-      <span class="eyebrow light">Agli namaz • <span id="hero-city">Karachi</span></span>
+      <span class="eyebrow light"><span data-t="nextLabel">Next prayer</span> • <span id="hero-city">Karachi</span></span>
       <div class="next-row">
         <div>
           <div class="next-name" id="next-name">…</div>
@@ -56,100 +62,135 @@
         <div class="countdown" id="countdown">--:--:--</div>
       </div>
       <div class="progress"><div class="bar" id="progress-bar"></div></div>
-      <div class="sehri-iftar">Sehri: <span id="sehri-time">…</span> &nbsp;•&nbsp; Iftar: <span id="iftar-time">…</span></div>
+      <div class="sehri-iftar"><span data-t="sehri">Sehri</span>: <span id="sehri-time">…</span> &nbsp;•&nbsp; <span data-t="iftar">Iftar</span>: <span id="iftar-time">…</span></div>
     </div>
   </section>
 
   <section class="timings" id="timings">
-    <h2>Today's Namaz Timings — <span id="city-name">Karachi</span></h2>
-    <p class="sub">Aaj ki namaz ke auqaat — select your city. Asr method can be switched Hanafi / Shafi.</p>
+    <span class="eyebrow" data-t="navNamaz">Namaz</span>
+    <h2><span data-t="timingsTitle">Today's Namaz Timings</span> — <span id="city-name">Karachi</span></h2>
+    <p class="sub" data-t="timingsSub">Aaj ki namaz ke auqaat — select your city. Asr method can be switched Hanafi / Shafi.</p>
     <div class="controls">
       <select id="city" aria-label="Select city"></select>
-      <button id="asr-hanafi" class="active" type="button">Asr: Hanafi</button>
-      <button id="asr-shafi" type="button">Asr: Shafi</button>
+      <button id="asr-hanafi" class="active" type="button" data-t="asrHanafi">Asr: Hanafi</button>
+      <button id="asr-shafi" type="button" data-t="asrShafi">Asr: Shafi</button>
     </div>
     <div class="times" id="times"></div>
-    <p class="method">Method: University of Islamic Sciences, Karachi — Fajr &amp; Isha at 18°. Times are calculated on this page (no external API), so they stay free and fast. Small differences from your local masjid timetable (1–3 minutes) are normal — method and rounding differ.</p>
+    <p class="method" data-t="method">Method: University of Islamic Sciences, Karachi — Fajr &amp; Isha at 18°. Times are calculated on this page (no external API), so they stay free and fast. Small differences from your local masjid timetable (1–3 minutes) are normal — method and rounding differ.</p>
   </section>
 
   <!-- Hijri converter mini (HijriCal pattern: one card, oversized result, honest note) -->
   <section class="converter" id="hijri-tool">
-    <h2>Hijri Date Converter</h2>
-    <p class="sub">Kisi bhi Gregorian tareekh ka Hijri date nikalein — result upar, wazahat neeche.</p>
+    <span class="eyebrow" data-t="navHijri">Hijri</span>
+    <h2 data-t="convTitle">Hijri Date Converter</h2>
+    <p class="sub" data-t="convSub">Kisi bhi Gregorian tareekh ka Hijri date nikalein — result upar, wazahat neeche.</p>
     <div class="conv-box">
-      <label for="conv-date">Gregorian date</label>
+      <label for="conv-date" data-t="convLabel">Gregorian date</label>
       <input id="conv-date" type="date">
-      <button id="conv-btn" type="button">Convert</button>
+      <button id="conv-btn" type="button" data-t="convBtn">Convert</button>
       <div class="conv-result" id="conv-result">—</div>
-      <p class="note">Tabular (calculated) Hijri date. Pakistan me elan-shuda (moon-sighting) date 1 din aage-peeche ho sakti hai — is liye har page par ye note saaf likha hoga.</p>
+      <p class="note" data-t="convNote">Tabular (calculated) Hijri date. Pakistan me elan-shuda (moon-sighting) date 1 din aage-peeche ho sakti hai — is liye har page par ye note saaf likha hoga.</p>
     </div>
   </section>
 
   <!-- Featured hadith (daily-feature pattern: repeat-visit reason) -->
   <section class="hadith-feat">
-    <span class="eyebrow">Aaj ki Hadith</span>
+    <span class="eyebrow" data-t="hadithLabel">Hadith of the Day</span>
     <p class="arabic">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ</p>
-    <p class="hadith-text">“Actions are but by intentions.” — har amal ka daromadar niyyat par hai.</p>
-    <p class="ref">Sahih al-Bukhari 1 • Full Hadith section (daily rotation, book + number references) jald aa raha hai.</p>
+    <p class="hadith-text" data-t="hadithText">“Actions are but by intentions.” — har amal ka daromadar niyyat par hai.</p>
+    <p class="ref" data-t="hadithRef">Sahih al-Bukhari 1 • Daily rotation — a new Hadith every day, with book + number.</p>
   </section>
 
-  <!-- Six sections — each card states OUR EDGE over the 55 researched sites -->
-  <section class="grid">
+  <!-- Sections -->
+  <section class="grid-wrap">
+    <span class="eyebrow" data-t="secEyebrow">Explore the sections</span>
+    <div class="grid">
     <div class="card" id="sec-zakat">
-      <h3>Zakat Calculator</h3>
-      <p>Cash, gold, silver, trade goods — 2.5%, gold nisab 7.5 tola / silver nisab 52.5 tola, aap apni aaj ki rates daalein.</p>
-      <p class="edge">Hamara edge: tola + PKR + Sarafa rate ki date — jo sirf Pakistani tools me hai, us se bhi saaf layout me.</p>
-      <span class="tag">Agla piece — full calculator</span>
+      <h3 data-t="cardZakatT">Zakat Calculator</h3>
+      <p data-t="cardZakatD">Cash, gold, silver, trade goods — 2.5%, gold nisab 7.5 tola / silver nisab 52.5 tola, aap apni aaj ki rates daalein.</p>
+      <p class="edge" data-t="cardZakatE">Tola + PKR, with the Sarafa rate date shown.</p>
+      <span class="tag" data-t="cardZakatTag">Tool</span>
     </div>
     <div class="card" id="sec-hijri">
-      <h3>Hijri Converter</h3>
-      <p>Gregorian ↔ Hijri, poore saal ki table, notable dates — Pakistan local basis ke sath.</p>
-      <p class="edge">Hamara edge: Ruet-e-Hilal local date + ±1 din ki imandari — ye combo kisi converter me nahi mila.</p>
-      <span class="tag">Mini tool upar live hai</span>
+      <h3 data-t="cardHijriT">Hijri Converter</h3>
+      <p data-t="cardHijriD">Gregorian ↔ Hijri, poore saal ki table, notable dates — Pakistan local basis ke sath.</p>
+      <p class="edge" data-t="cardHijriE">Ruet-e-Hilal local date, with the ±1 day note stated clearly.</p>
+      <span class="tag" data-t="cardHijriTag">Mini tool upar live hai</span>
     </div>
     <div class="card" id="sec-surahs">
-      <h3>Short Surahs + 4 Qul</h3>
-      <p>All small Surahs — Arabic (asli text, image nahi) + Urdu + English, har Surah ka apna page.</p>
-      <p class="edge">Hamara edge: Urdu + audio + asli Arabic text teeno ek sath — ye combo kisi site par nahi mila.</p>
-      <span class="tag">Coming soon</span>
+      <h3 data-t="cardSurahT">Short Surahs + 4 Qul</h3>
+      <p data-t="cardSurahD">All small Surahs — Arabic (asli text, image nahi) + Urdu + English, har Surah ka apna page.</p>
+      <p class="edge" data-t="cardSurahE">Urdu + English translations beside the original Arabic text.</p>
+      <span class="tag" data-t="cardSurahTag">Library</span>
     </div>
     <div class="card" id="sec-hadith">
-      <h3>Hadith</h3>
-      <p>Famous Hadith only — har hadith ke sath authentic book + number, verified before publishing.</p>
-      <p class="edge">Hamara edge: sirf hadith nahi, samajh bhi — topic-wise articles, daily rotation, Roman Urdu option.</p>
-      <span class="tag">Coming soon</span>
+      <h3 data-t="cardHadithT">Hadith</h3>
+      <p data-t="cardHadithD">Famous Hadith only — har hadith ke sath authentic book + number, verified before publishing.</p>
+      <p class="edge" data-t="cardHadithE">Topic-wise articles, daily rotation, Roman Urdu option.</p>
+      <span class="tag" data-t="cardHadithTag">Library</span>
     </div>
     <div class="card" id="sec-khatam">
-      <h3>Khatam Sharif</h3>
-      <p>Complete guide: dua, step-by-step tariqa, fazilat — with references, for Isal-e-Sawab.</p>
-      <p class="edge">Hamara edge: short + long version, Arabic + transliteration + translation, printable — modern page, kisi ke paas ye combo nahi.</p>
-      <span class="tag">Pehla topic page</span>
+      <h3 data-t="cardKhatamT">Khatam Sharif</h3>
+      <p data-t="cardKhatamD">Complete guide: dua, step-by-step tariqa, fazilat — with references, for Isal-e-Sawab.</p>
+      <p class="edge" data-t="cardKhatamE">Short + long version, Arabic + transliteration + translation, printable.</p>
+      <span class="tag" data-t="cardKhatamTag">Pehla topic page</span>
     </div>
     <div class="card">
-      <h3>Ramadan 2027</h3>
-      <p>Sehr &amp; Iftar timetables for every city — publishing before Ramadan 2027, in sha Allah.</p>
-      <p class="edge">Hamara edge: har sheher ka alag page + monthly table — chhote sheher pehle (Samundri, Gojra, Toba Tek Singh).</p>
-      <span class="tag">Coming soon</span>
+      <h3 data-t="cardRamT">Ramadan 2027</h3>
+      <p data-t="cardRamD">Sehr &amp; Iftar timetables for every city — publishing before Ramadan 2027, in sha Allah.</p>
+      <p class="edge" data-t="cardRamE">Har sheher ka alag page + monthly table — chhote sheher pehle (Samundri, Gojra, Toba Tek Singh).</p>
+      <span class="tag" data-t="cardRamTag">January 2027</span>
     </div>
+    </div>
+  </section>
+
+  <!-- Ramadan 2027 banner -->
+  <section class="ramadan">
+    <span class="eyebrow light" data-t="ramBanEyebrow">Ramadan 2027</span>
+    <h2 data-t="ramBanT">Ramadan 2027 — Sehr &amp; Iftar timetables</h2>
+    <p data-t="ramBanD">Sehr and Iftar timetables for every city, publishing in January 2027 — before Ramadan begins, in sha Allah.</p>
+    <p class="ram-note" data-t="ramBanNote">1 Ramadan 1448 is expected around 8 February 2027, subject to moon sighting. Timings use the Karachi method (18°/18°).</p>
   </section>
 
   <!-- Trust strip (PakHisaab + HijriCal pattern: method + source + date, saaf) -->
   <section class="trust">
-    <div><strong>Karachi method</strong><span>18° / 18°, Hanafi + Shafi Asr</span></div>
-    <div><strong>Quran text</strong><span>Tanzil (CC-BY 3.0), unchanged</span></div>
-    <div><strong>Translations</strong><span>Public-domain, credited by name</span></div>
-    <div><strong>Honest dates</strong><span>Hijri ±1 day note on every page</span></div>
+    <div><strong data-t="trust1T">Karachi method</strong><span data-t="trust1D">18° / 18°, Hanafi + Shafi Asr</span></div>
+    <div><strong data-t="trust2T">Quran text</strong><span data-t="trust2D">Tanzil (CC-BY 3.0), unchanged</span></div>
+    <div><strong data-t="trust3T">Translations</strong><span data-t="trust3D">Public-domain, credited by name</span></div>
+    <div><strong data-t="trust4T">Honest dates</strong><span data-t="trust4D">Hijri ±1 day note on every page</span></div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <p>Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. Quran Arabic text on future pages comes from the Tanzil project (CC-BY 3.0, text unchanged, with credit and link). Translations are public-domain works, credited by translator name. No account needed to use the tools.</p>
+  <div class="wrap foot-grid">
+    <div>
+      <h3>Ahl-e-Islam</h3>
+      <p data-t="footer">Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. Quran Arabic text on future pages comes from the Tanzil project (CC-BY 3.0, text unchanged, with credit and link). Translations are public-domain works, credited by translator name. No account needed to use the tools.</p>
+    </div>
+    <div>
+      <h3 data-t="footSections">Sections</h3>
+      <nav aria-label="Footer sections">
+        <a href="#timings" data-t="navNamaz">Namaz</a>
+        <a href="#hijri-tool" data-t="navHijri">Hijri</a>
+        <a href="#sec-zakat" data-t="navZakat">Zakat</a>
+        <a href="#sec-khatam" data-t="navKhatam">Khatam</a>
+        <a href="#sec-surahs" data-t="navSurahs">Surahs</a>
+        <a href="#sec-hadith" data-t="navHadith">Hadith</a>
+      </nav>
+    </div>
+    <div>
+      <h3 data-t="footTrust">Method &amp; honesty</h3>
+      <p data-t="footTrustD">Namaz times are calculated on-page (Karachi method, 18°/18°). Hijri dates are tabular — the local moon-sighting date can differ by about 1 day. Hadith are published only with book, number and grade.</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>© 2026 Ahl-e-Islam — ahleislam.online</p>
   </div>
 </footer>
 
 <script src="assets/js/praytimes.js"></script>
 <script src="assets/js/hijri.js"></script>
+<script src="assets/js/lang.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
