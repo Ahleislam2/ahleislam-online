@@ -1,1 +1,94 @@
-<!-- placeholder: replaced by real upload -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahl-e-Islam — Namaz Timings, Zakat Calculator, Hijri Converter</title>
+<meta name="description" content="Ahl-e-Islam: city-wise namaz timings for Pakistan, zakat calculator with tola nisab, Hijri date converter, short Surahs, Hadith and Khatam Sharif — with authentic references.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark">ا</div>
+      <div>
+        <h1>Ahl-e-Islam</h1>
+        <p>Namaz • Zakat • Hijri • Quran • Hadith — authentic references, simple tools</p>
+      </div>
+    </div>
+    <div class="search-box">
+      <input id="site-search" type="search" placeholder="Search the site — try “Khatam Sharif”, “Zakat”, “Lahore namaz”… " aria-label="Search the site">
+      <div class="suggest" id="suggest"></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="date-strip">
+      <span class="hijri" id="hijri-date">…</span>
+      <span class="greg" id="greg-date">…</span>
+      <span class="note">Hijri date is computed (tabular calendar). Your local announced date (moon sighting) can differ by about 1 day.</span>
+    </div>
+  </section>
+
+  <section class="timings" id="timings">
+    <h2>Today's Namaz Timings — <span id="city-name">Karachi</span></h2>
+    <p class="sub">Aaj ki namaz ke auqaat — select your city. Asr method can be switched Hanafi / Shafi.</p>
+    <div class="controls">
+      <select id="city" aria-label="Select city"></select>
+      <button id="asr-hanafi" class="active" type="button">Asr: Hanafi</button>
+      <button id="asr-shafi" type="button">Asr: Shafi</button>
+    </div>
+    <div class="times" id="times"></div>
+    <p class="method">Method: University of Islamic Sciences, Karachi — Fajr &amp; Isha at 18°. Times are calculated on this page (no external API), so they stay free and fast. Small differences from your local masjid timetable (1–3 minutes) are normal — method and rounding differ.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card" id="sec-zakat">
+      <h3>Zakat Calculator</h3>
+      <p>Cash, gold, silver and trade goods — 2.5% with gold nisab (7.5 tola) and silver nisab (52.5 tola). You enter today's rates.</p>
+      <span class="tag">Coming soon</span>
+    </div>
+    <div class="card" id="sec-hijri">
+      <h3>Hijri Converter</h3>
+      <p>Convert any Gregorian date to Hijri and back, plus today's Islamic date for Pakistan.</p>
+      <span class="tag">Coming soon</span>
+    </div>
+    <div class="card" id="sec-surahs">
+      <h3>Short Surahs</h3>
+      <p>All small Surahs with Arabic, Urdu and English translation — plus the 4 Qul collection.</p>
+      <span class="tag">Coming soon</span>
+    </div>
+    <div class="card" id="sec-hadith">
+      <h3>Hadith</h3>
+      <p>Famous Hadith only, each with its authentic book and number reference, verified before publishing.</p>
+      <span class="tag">Coming soon</span>
+    </div>
+    <div class="card" id="sec-khatam">
+      <h3>Khatam Sharif</h3>
+      <p>Complete guide: dua, step-by-step tariqa and fazilat, with references — for Isal-e-Sawab.</p>
+      <span class="tag">Coming soon</span>
+    </div>
+    <div class="card">
+      <h3>Ramadan 2027</h3>
+      <p>Sehr &amp; Iftar timetables for every city — publishing before Ramadan 2027, in sha Allah.</p>
+      <span class="tag">Coming soon</span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. Quran Arabic text on future pages comes from the Tanzil project (CC-BY 3.0, text unchanged, with credit and link). Translations are public-domain works, credited by translator name.</p>
+  </div>
+</footer>
+
+<script src="assets/js/praytimes.js"></script>
+<script src="assets/js/hijri.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
