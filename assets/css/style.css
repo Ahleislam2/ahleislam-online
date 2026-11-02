@@ -66,6 +66,8 @@ h2 { font-size: 1.85rem; margin: 0 0 6px; }
 .progress { height: 8px; background: rgba(255,255,255,0.2); border-radius: 999px; margin: 16px 0 10px; overflow: hidden; }
 .progress .bar { height: 100%; background: #e3c878; width: 0%; border-radius: 999px; }
 .sehri-iftar { font-size: 0.9rem; color: #d9e6d5; }
+.hero-btn { display: inline-block; margin-top: 18px; background: var(--gold); color: var(--green-dark); text-decoration: none; font-weight: 700; padding: 11px 24px; border-radius: 999px; }
+.hero-btn:hover { background: #e3c878; }
 
 /* ---- Timings widget ---- */
 .timings { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; margin: 0 0 34px; box-shadow: var(--shadow); }
