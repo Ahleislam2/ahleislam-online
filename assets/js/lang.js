@@ -97,7 +97,8 @@
     footTrust: { en: 'Method & honesty', ur: 'طریقہ اور ایمانداری' },
     footTrustD: { en: 'Namaz times are calculated on-page (Karachi method, 18°/18°). Hijri dates are tabular — the local moon-sighting date can differ by about 1 day. Hadith are published only with book, number and grade.',
                   ur: 'نماز کے اوقات اسی صفحے پر حسابی طریقے سے نکالے جاتے ہیں (کراچی طریقہ، 18°/18°)۔ ہجری تاریخیں جدولی ہیں — مقامی چاند دیکھنے کی تاریخ 1 دن آگے پیچھے ہو سکتی ہے۔ احادیث صرف کتاب، نمبر اور درجے کے ساتھ شائع کی جاتی ہیں۔' },
-    nextTag: { en: 'Next', ur: 'اگلی' }
+    nextTag: { en: 'Next', ur: 'اگلی' },
+    quranBtn: { en: 'Read the Quran — all 114 Surahs', ur: 'قرآن پڑھیں — تمام 114 سورتیں' }
   };
 
   var PRAYERS = {
