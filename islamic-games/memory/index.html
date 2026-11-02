@@ -1,1 +1,156 @@
-<!-- placeholder: replaced by the real Memory Match upload -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Match — Islamic Terms | Ahl-e-Islam</title>
+<meta name="description" content="Memory Match: 6 Islami lafz aur un ke maani milao. Card palat kar sahi jora dhoondhein.">
+<link rel="canonical" href="https://ahleislam.online/islamic-games/memory/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<style>
+.game-wrap { max-width: 720px; margin: 26px auto 40px; }
+.game-wrap h1 { font-family: "Lora", Georgia, serif; color: var(--green); font-size: 1.9rem; margin: 0 0 8px; }
+.game-wrap .sub { color: var(--muted); margin: 0 0 20px; }
+.game-stats { display: flex; gap: 16px; color: var(--muted); font-weight: 600; margin-bottom: 16px; }
+.board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (min-width: 640px) { .board { grid-template-columns: repeat(4, 1fr); } }
+.mem-card { min-height: 110px; padding: 12px 10px; border: 2px solid #e8ddc4; border-radius: 12px; background: #fff; font-size: 0.95rem; cursor: pointer; font-family: inherit; line-height: 1.4; }
+.mem-card .qmark { font-size: 2rem; color: var(--gold); font-weight: 700; }
+.mem-card.open { border-color: var(--gold); background: #fffdf5; }
+.mem-card.matched { border-color: #1e7d46; background: #eaf7ee; cursor: default; }
+.mem-card:disabled { cursor: default; }
+.win-msg { display: none; margin-top: 20px; background: var(--green-soft); border-radius: 12px; padding: 18px; font-size: 1.05rem; }
+.win-msg.show { display: block; }
+.btn { display: inline-block; margin-top: 18px; padding: 12px 26px; border: 0; border-radius: 99px; background: var(--green); color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+.btn:hover { background: var(--green-dark); }
+.back-link { display: inline-block; margin-bottom: 16px; color: var(--green); font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand-row">
+      <div class="brand">
+        <img class="brand-logo" src="../../assets/logo.png" alt="Ahl-e-Islam — ahleislam.online logo">
+        <p class="brand-tag">Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
+      </div>
+      <nav class="nav" aria-label="Sections">
+        <a href="/">Home</a>
+        <a href="/namaz">Namaz</a>
+        <a href="/islamic-calendar">Islamic Calendar</a>
+        <a href="/zakat">Zakat</a>
+        <a href="/khatam-sharif">Khatam</a>
+        <a href="/quran-pak">Quran Pak</a>
+        <a href="/hadith">Hadith</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main class="wrap game-wrap">
+  <a class="back-link" href="/islamic-games/">← Sab Games</a>
+  <h1>Memory Match</h1>
+  <p class="sub">Card par click karein — Islami lafz ko us ke sahi maani se milao. 6 joray dhoondhne hain.</p>
+  <div class="game-stats"><span id="moves">Moves: 0</span><span id="matches">Matches: 0 / 6</span></div>
+  <div class="board" id="board"></div>
+  <div class="win-msg" id="win-msg"></div>
+  <button class="btn" id="again-btn" type="button">Dobara Khelo</button>
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <h3>Ahl-e-Islam</h3>
+      <p>Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. No account needed to use the tools.</p>
+    </div>
+    <div>
+      <h3>Sections</h3>
+      <nav aria-label="Footer sections">
+        <a href="/">Home</a>
+        <a href="/namaz">Namaz</a>
+        <a href="/islamic-calendar">Islamic Calendar</a>
+        <a href="/zakat">Zakat</a>
+        <a href="/khatam-sharif">Khatam</a>
+        <a href="/quran-pak">Quran Pak</a>
+        <a href="/hadith">Hadith</a>
+      </nav>
+    </div>
+    <div>
+      <h3>Method &amp; honesty</h3>
+      <p>Games me di gayi maloomat aam Islami maloomat hai.</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>© 2026 Ahl-e-Islam — ahleislam.online</p>
+  </div>
+</footer>
+<script>
+var PAIRS = [
+  { term: "Shahadah", meaning: "Allah ke siwa koi mabood nahi, Muhammad ﷺ Allah ke Rasool hain" },
+  { term: "Salah", meaning: "Din me 5 farz namazain" },
+  { term: "Sawm", meaning: "Ramadan ke roze" },
+  { term: "Zakat", meaning: "Maal ka 2.5% haqdar ko dena" },
+  { term: "Hajj", meaning: "Zindagi me aik baar Kaaba ka safar (istitaat par)" },
+  { term: "Quran", meaning: "Allah ki aakhri kitab, 114 Surahain" }
+];
+var board = document.getElementById('board');
+var movesEl = document.getElementById('moves');
+var matchesEl = document.getElementById('matches');
+var winEl = document.getElementById('win-msg');
+var first = null, lock = false, moves = 0, matches = 0;
+function shuffle(arr) {
+  for (var i = arr.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+  }
+  return arr;
+}
+function build() {
+  var cards = [];
+  PAIRS.forEach(function(p, i) {
+    cards.push({ pair: i, text: p.term });
+    cards.push({ pair: i, text: p.meaning });
+  });
+  shuffle(cards);
+  board.innerHTML = '';
+  first = null; lock = false; moves = 0; matches = 0;
+  movesEl.textContent = 'Moves: 0';
+  matchesEl.textContent = 'Matches: 0 / 6';
+  winEl.className = 'win-msg'; winEl.textContent = '';
+  cards.forEach(function(c) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'mem-card';
+    b.innerHTML = '<span class="qmark">?</span>';
+    b.onclick = function() {
+      if (lock || b.classList.contains('open') || b.classList.contains('matched')) return;
+      b.classList.add('open'); b.textContent = c.text;
+      if (!first) { first = { btn: b, pair: c.pair }; return; }
+      moves++;
+      movesEl.textContent = 'Moves: ' + moves;
+      var prev = first; first = null;
+      if (prev.pair === c.pair) {
+        prev.btn.classList.add('matched'); b.classList.add('matched');
+        prev.btn.disabled = true; b.disabled = true;
+        matches++;
+        matchesEl.textContent = 'Matches: ' + matches + ' / 6';
+        if (matches === 6) {
+          winEl.textContent = 'Mubarak! Saare 6 joray mil gaye — ' + moves + ' moves me.';
+          winEl.className = 'win-msg show';
+        }
+      } else {
+        lock = true;
+        setTimeout(function() {
+          prev.btn.classList.remove('open'); prev.btn.innerHTML = '<span class="qmark">?</span>';
+          b.classList.remove('open'); b.innerHTML = '<span class="qmark">?</span>';
+          lock = false;
+        }, 900);
+      }
+    };
+    board.appendChild(b);
+  });
+}
+document.getElementById('again-btn').onclick = build;
+build();
+</script>
+</body>
+</html>
