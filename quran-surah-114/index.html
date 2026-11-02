@@ -39,10 +39,14 @@ td.en{color:#333}
 .prevnext a{flex:1;text-align:center;background:#0f5132;color:#fff;text-decoration:none;padding:14px;border-radius:12px}
 .prevnext span{flex:1;text-align:center;padding:14px;color:#6b5d3a;border:1px dashed #c9c9c9;border-radius:12px}
 .footer{text-align:center;color:#9db5a4;font-size:13px;padding:24px}
+
+.topbar button.active{background:#c9a24b;border-color:#c9a24b;color:#1f2a24;font-weight:700}
+body[data-lang="ur"] td.en, body[data-lang="ur"] .we{display:none}
+body[data-lang="en"] td.ur, body[data-lang="en"] .wm{display:none}
 </style>
 </head>
-<body>
-<header class="topbar"><a href="/">Ahl-e-Islam</a><span><button onclick="fontStep(-2)">A-</button><button onclick="fontStep(2)">A+</button></span></header>
+<body data-lang="ur">
+<header class="topbar"><a href="/">Ahl-e-Islam</a><span><button id="langUr" class="active" onclick="setLang('ur')">اردو</button><button id="langEn" onclick="setLang('en')">English</button><button onclick="fontStep(-2)">A-</button><button onclick="fontStep(2)">A+</button></span></header>
 <div class="book">
 <p class="crumb"><a href="/">Home</a> / <a href="/quran">Quran</a> / Surah An-Nas</p>
 <div class="head"><div class="orn">✦ ✦ ✦</div><h1>سُورَةُ النَّاسِ</h1><p>سورۃ الناس &nbsp;•&nbsp; مکی &nbsp;•&nbsp; 6 آیات &nbsp;•&nbsp; پارہ 30</p></div>
@@ -62,6 +66,7 @@ td.en{color:#333}
 <script>
 let ar=35;
 function fontStep(d){ar=Math.min(48,Math.max(28,ar+d));document.documentElement.style.setProperty('--ar',ar+'px');}
+function setLang(l){document.body.dataset.lang=l;document.getElementById('langUr').classList.toggle('active',l==='ur');document.getElementById('langEn').classList.toggle('active',l==='en');}
 </script>
 </body>
 </html>
