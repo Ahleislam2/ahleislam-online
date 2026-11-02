@@ -1,124 +1,67 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Surah An-Nas (114) — Quran Pak with Urdu Translation | Ahl-e-Islam</title>
 <meta name="description" content="Surah An-Nas (114) — 6 Ayat, Makki. Arabic text from Tanzil, Urdu translation Kanz-ul-Iman, English translation Pickthall.">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--emerald:#0F5132;--gold:#C9A24B;--ink:#1F2A24;--cream:#FBF7EE;--sage:#EAF3E3;--panel:#ffffff;--strip:#FBF7EE;--muted:#5a6b5e;--ar:32px;--ur:20px}
-@media(min-width:768px){:root{--ar:40px;--ur:22px}}
-[data-theme="dark"]{--cream:#122019;--panel:#1B2E24;--strip:#243B2E;--ink:#EAF3E3;--muted:#9db5a4;--sage:#1B2E24}
-*{box-sizing:border-box} body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-serif}
-.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--emerald);color:#fff;position:sticky;top:0;z-index:10}
-.brand{font-weight:600} .controls button{background:transparent;border:1px solid #ffffff88;color:#fff;border-radius:20px;padding:6px 12px;margin-left:6px;cursor:pointer}
-.controls button.active{background:var(--gold);border-color:var(--gold);color:#1F2A24}
-.col{max-width:720px;margin:0 auto;padding:20px 16px 48px}
-.crumb{font-size:13px;color:var(--muted)} .crumb a{color:var(--muted)}
-h1{font-size:28px;margin:8px 0 4px} .meta{color:var(--muted);margin:0 0 24px}
-.bismillah{text-align:center;background:var(--panel);border:1px solid var(--gold);border-radius:16px;padding:28px 16px 20px;margin-bottom:28px}
-.bismillah .ar{font-family:Amiri,serif;font-size:clamp(34px,9vw,48px);line-height:2;margin:0}
-.bismillah .strip{display:inline-block;background:var(--sage);border-radius:8px;padding:8px 16px;font-family:'Noto Nastaliq Urdu',serif;font-size:17px;line-height:2.2;margin-top:12px}
-.pair{margin-bottom:30px}
-.arabic{font-family:Amiri,serif;font-size:var(--ar);line-height:2.1;text-align:center;margin:0 0 12px}
-.badge{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1.5px solid var(--gold);border-radius:50%;color:var(--gold);font-size:17px;font-family:Amiri,serif;vertical-align:middle}
-.tr-strip{background:var(--strip);border:1px solid #dfe8d5;border-radius:10px;padding:14px 18px;margin:0;text-align:center;line-height:2.3;font-family:'Noto Nastaliq Urdu',serif;font-size:var(--ur)}
-.tr-strip.en{font-family:Inter,sans-serif;line-height:1.7;font-size:17px;text-align:left}
-details{background:var(--panel);border:1px solid #dfe8d5;border-radius:12px;padding:16px 20px;margin:28px 0}
-details summary{cursor:pointer;font-weight:600} details p{line-height:1.8}
-.intro,.credits{background:var(--panel);border-radius:12px;padding:20px;margin-bottom:20px;line-height:1.8}
-.intro h2,.credits h2{margin-top:0;font-size:19px}
-.prevnext{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
-.prevnext a{flex:1;text-align:center;background:var(--emerald);color:#fff;text-decoration:none;padding:14px;border-radius:12px}
-.prevnext span{flex:1;text-align:center;padding:14px;color:var(--muted);border:1px dashed #c9c9c9;border-radius:12px}
-.footer{text-align:center;color:var(--muted);font-size:13px;padding:24px}
+*{box-sizing:border-box} body{margin:0;background:#0f2a1e;font-family:Inter,system-ui,sans-serif;padding:0}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#0f5132;color:#fff;position:sticky;top:0;z-index:10}
+.topbar a{color:#fff;text-decoration:none;font-weight:600}
+.topbar button{background:transparent;border:1px solid #ffffff88;color:#fff;border-radius:20px;padding:6px 12px;margin-left:6px;cursor:pointer}
+.book{max-width:740px;margin:26px auto;background:#fbf7ee;border:3px solid #0f5132;outline:3px solid #c9a24b;outline-offset:8px;border-radius:4px;padding:30px 28px 22px;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.crumb{font-size:13px;color:#6b5d3a} .crumb a{color:#6b5d3a}
+.head{text-align:center;background:#0f5132;color:#fff;border:2px solid #c9a24b;border-radius:10px;padding:18px 10px;margin:16px 0 24px}
+.head .orn{color:#c9a24b;letter-spacing:8px;font-size:1.1rem}
+.head h1{font-family:Amiri,serif;font-size:2.6rem;margin:8px 0 4px;color:#fff}
+.head p{margin:0;color:#e3c878;font-size:1rem}
+.arabic{font-family:Amiri,serif;font-size:var(--ar,2.2rem);line-height:2.3;direction:rtl;text-align:center;color:#0f5132;font-weight:700}
+.marker{display:inline-block;background:#c9a24b;color:#0f5132;border-radius:50%;width:1.6em;height:1.6em;line-height:1.6em;text-align:center;font-size:1rem;font-weight:700;margin:0 4px;vertical-align:middle}
+h2{color:#0f5132;border-bottom:2px solid #c9a24b;padding-bottom:6px;margin-top:28px;direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif}
+h3{color:#0f5132;margin:16px 0 4px;direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif}
+.note{font-size:.85rem;color:#6b5d3a;text-align:center;margin-top:18px}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.95rem}
+td{border-top:1px solid #e3d3a3;padding:10px 8px;vertical-align:top}
+td.n{width:28px;color:#0f5132;font-weight:700;text-align:center}
+td.ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2}
+td.en{color:#333}
 .words{display:flex;flex-wrap:wrap;gap:10px;direction:rtl;justify-content:center;margin:8px 0 18px}
-.w{background:var(--panel);border:1.5px solid var(--gold);border-radius:10px;padding:10px 12px;text-align:center;min-width:96px}
-.w .aw{font-family:Amiri,serif;font-size:27px;color:var(--emerald);font-weight:700}
-.w .wm{font-family:'Noto Nastaliq Urdu',serif;font-size:16px;line-height:1.9;color:#000;font-weight:600;margin-top:4px}
-.w .we{font-size:13px;color:var(--muted)}
-.wbw h2,.tafseel h2{color:var(--emerald);border-bottom:2px solid var(--gold);padding-bottom:6px}
-.tafseel table{width:100%;border-collapse:collapse}
-.tafseel td{border-top:1px solid #dfe8d5;padding:12px 10px;vertical-align:top;color:#000;font-family:'Noto Nastaliq Urdu',serif;line-height:2}
+.w{background:#fff;border:1.5px solid #c9a24b;border-radius:10px;padding:10px 12px;text-align:center;min-width:96px}
+.w .aw{font-family:Amiri,serif;font-size:1.7rem;color:#0f5132;font-weight:700}
+.w .wm{font-family:'Noto Nastaliq Urdu',serif;font-size:1rem;line-height:1.9;color:#000;font-weight:600;margin-top:4px}
+.w .we{font-size:.8rem;color:#666}
+.tafseel td{color:#000;font-family:'Noto Nastaliq Urdu',serif;line-height:2}
 .tafseel td.t-h{width:170px;font-weight:700}
-
+.sources{background:#fff;border:1px solid #e3d3a3;border-radius:10px;padding:16px;margin-top:24px;line-height:1.8;font-size:.9rem}
+.prevnext{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+.prevnext a{flex:1;text-align:center;background:#0f5132;color:#fff;text-decoration:none;padding:14px;border-radius:12px}
+.prevnext span{flex:1;text-align:center;padding:14px;color:#6b5d3a;border:1px dashed #c9c9c9;border-radius:12px}
+.footer{text-align:center;color:#9db5a4;font-size:13px;padding:24px}
 </style>
 </head>
 <body>
-<header class="topbar">
-  <span class="brand">Ahl-e-Islam</span>
-  <span class="controls">
-    <button id="langUr" class="active" onclick="setLang('ur')">اردو</button><button id="langEn" onclick="setLang('en')">English</button>
-    <button onclick="fontStep(-2)">A-</button><button onclick="fontStep(2)">A+</button>
-    <button onclick="toggleTheme()">🌙 / ☀️</button>
-  </span>
-</header>
-<main class="col">
-  <p class="crumb"><a href="/">Home</a> / <a href="/quran">Quran</a> / Surah An-Nas</p>
-  <h1>Surah An-Nas — النَّاسِ</h1>
-  <p class="meta">Surah 114 &bull; 6 Ayat &bull; Makki</p>
-  <div class="bismillah">
-    <p class="ar" dir="rtl" lang="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
-    <span class="strip" dir="rtl" lang="ur">اللہ کے نام سے شروع جو بہت مہربان رحمت والا</span>
-  </div>
-    <section class="pair">
-      <p class="arabic" dir="rtl" lang="ar">قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ <span class="badge" aria-label="Ayah 1">١</span></p>
-      <p class="tr-strip" dir="rtl" lang="ur" data-ur="تم کہو میں اس کی پناہ میں آیا جو سب لوگوں کا رب" data-en="Say: I seek refuge in the Lord of mankind,">تم کہو میں اس کی پناہ میں آیا جو سب لوگوں کا رب</p>
-    </section>
-    <section class="pair">
-      <p class="arabic" dir="rtl" lang="ar">مَلِكِ ٱلنَّاسِ <span class="badge" aria-label="Ayah 2">٢</span></p>
-      <p class="tr-strip" dir="rtl" lang="ur" data-ur="سب لوگوں کا بادشاہ" data-en="The King of mankind,">سب لوگوں کا بادشاہ</p>
-    </section>
-    <section class="pair">
-      <p class="arabic" dir="rtl" lang="ar">إِلَٰهِ ٱلنَّاسِ <span class="badge" aria-label="Ayah 3">٣</span></p>
-      <p class="tr-strip" dir="rtl" lang="ur" data-ur="سب لوگوں کا خدا" data-en="The god of mankind,">سب لوگوں کا خدا</p>
-    </section>
-    <section class="pair">
-      <p class="arabic" dir="rtl" lang="ar">مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ <span class="badge" aria-label="Ayah 4">٤</span></p>
-      <p class="tr-strip" dir="rtl" lang="ur" data-ur="اس کے شر سے جو دل میں برے خطرے ڈالے اور دبک رہے" data-en="From the evil of the sneaking whisperer,">اس کے شر سے جو دل میں برے خطرے ڈالے اور دبک رہے</p>
-    </section>
-    <section class="pair">
-      <p class="arabic" dir="rtl" lang="ar">ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ <span class="badge" aria-label="Ayah 5">٥</span></p>
-      <p class="tr-strip" dir="rtl" lang="ur" data-ur="وہ جو لوگوں کے دلوں میں وسوسے ڈالتے ہیں،" data-en="Who whispereth in the hearts of mankind,">وہ جو لوگوں کے دلوں میں وسوسے ڈالتے ہیں،</p>
-    </section>
-    <section class="pair">
-      <p class="arabic" dir="rtl" lang="ar">مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ <span class="badge" aria-label="Ayah 6">٦</span></p>
-      <p class="tr-strip" dir="rtl" lang="ur" data-ur="جن اور آدمی" data-en="Of the jinn and of mankind.">جن اور آدمی</p>
-    </section>
-  <section class="wbw">
-    <h2 dir="rtl" lang="ur">لفظ بہ لفظ ترجمہ</h2>
-    <p style="color:var(--muted)">ہر لفظ کے نیچے اس کا معنی ہے — عربی الفاظ تنزیل فائل سے لیے گئے ہیں۔</p>
-    <h3 dir='rtl' lang='ur'>بسم اللہ</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>بِسْمِ</div><div class='wm' dir='rtl' lang='ur'>نام سے</div><div class='we'>In the name</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱللَّهِ</div><div class='wm' dir='rtl' lang='ur'>اللہ</div><div class='we'>Allah</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلرَّحْمَٰنِ</div><div class='wm' dir='rtl' lang='ur'>بہت مہربان</div><div class='we'>Entirely Merciful</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلرَّحِيمِ</div><div class='wm' dir='rtl' lang='ur'>نہایت رحم والا</div><div class='we'>Especially Merciful</div></div></div><h3 dir='rtl' lang='ur'>آیت 1</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>قُلْ</div><div class='wm' dir='rtl' lang='ur'>کہہ دو</div><div class='we'>Say</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>أَعُوذُ</div><div class='wm' dir='rtl' lang='ur'>میں پناہ مانگتا ہوں</div><div class='we'>I seek refuge</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>بِرَبِّ</div><div class='wm' dir='rtl' lang='ur'>رب کی</div><div class='we'>in the Lord</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 2</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>مَلِكِ</div><div class='wm' dir='rtl' lang='ur'>بادشاہ</div><div class='we'>King</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 3</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>إِلَٰهِ</div><div class='wm' dir='rtl' lang='ur'>معبود</div><div class='we'>God</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 4</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>مِن</div><div class='wm' dir='rtl' lang='ur'>سے</div><div class='we'>from</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>شَرِّ</div><div class='wm' dir='rtl' lang='ur'>شر</div><div class='we'>evil</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلْوَسْوَاسِ</div><div class='wm' dir='rtl' lang='ur'>وسوسہ ڈالنے والے</div><div class='we'>whisperer</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلْخَنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>پیچھے ہٹ جانے والے</div><div class='we'>retreating</div></div></div><h3 dir='rtl' lang='ur'>آیت 5</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلَّذِى</div><div class='wm' dir='rtl' lang='ur'>وہ جو</div><div class='we'>who</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>يُوَسْوِسُ</div><div class='wm' dir='rtl' lang='ur'>وسوسہ ڈالتا ہے</div><div class='we'>whispers</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>فِى</div><div class='wm' dir='rtl' lang='ur'>میں</div><div class='we'>in</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>صُدُورِ</div><div class='wm' dir='rtl' lang='ur'>سینوں</div><div class='we'>hearts</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 6</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>مِنَ</div><div class='wm' dir='rtl' lang='ur'>سے</div><div class='we'>from</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلْجِنَّةِ</div><div class='wm' dir='rtl' lang='ur'>جن</div><div class='we'>jinn</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>وَٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>اور لوگوں</div><div class='we'>and mankind</div></div></div>
-  </section>
-  <section class="tafseel">
-    <h2 dir="rtl" lang="ur">تفصیل</h2>
-    <table dir="rtl"><tbody><tr><td class='t-h'>سورۃ کا نام اور معنی</td><td>الناس کا مطلب ہے 'لوگ'۔ یہ قرآن پاک کی آخری سورۃ ہے، مکی ہے، 6 آیات ہیں، پارہ 30 میں ہے۔</td></tr><tr><td class='t-h'>اصل موضوع</td><td>اس سورۃ میں اللہ سے پناہ مانگی گئی ہے — اس وسوسے سے جو دلوں میں برا خیال ڈالتا ہے اور پھر چھپ جاتا ہے۔</td></tr><tr><td class='t-h'>تین صفات</td><td>اللہ کو تین صفات سے پکارا گیا ہے: رب (پالنے والا)، مالک (بادشاہ)، الٰہ (معبود)۔ یہ تینوں مل کر بتاتی ہیں کہ پناہ صرف اللہ سے مانگنی چاہیے۔</td></tr><tr><td class='t-h'>فلق کے ساتھ جوڑا</td><td>سورۃ الفلق اور سورۃ الناس کو معوذتین کہتے ہیں — دو پناہ والی سورتیں۔ ایک میں باہر کے شر سے پناہ ہے، اس میں اندر کے وسوسے سے۔</td></tr><tr><td class='t-h'>آیات 1 تا 3</td><td>پہلی تین آیات میں اللہ کی صفات بیان ہوئی ہیں — رب، مالک، الٰہ — تاکہ پناہ مانگنے والا پہلے یہ جان لے کہ وہ کس سے پناہ مانگ رہا ہے۔</td></tr><tr><td class='t-h'>آیات 4 تا 6</td><td>آخری تین آیات میں اس شر کا ذکر ہے جس سے پناہ مانگی گئی: خناس (چھپ کر وسوسہ ڈالنے والا)، جو لوگوں کے دلوں میں وسوسے ڈالتا ہے، چاہے وہ جن ہو یا انسان۔</td></tr></tbody></table>
-  </section>
-  <details>
-    <summary>English translation (Pickthall) — full Surah</summary>
-    <p>Say: I seek refuge in the Lord of mankind, The King of mankind, The god of mankind, From the evil of the sneaking whisperer, Who whispereth in the hearts of mankind, Of the jinn and of mankind.</p>
-  </details>
-  <div class="intro">
-    <h2>About this Surah</h2>
-    <p>Surah An-Nas is the last Surah of the Quran. It is a Makki Surah with 6 verses. Together with Surah Al-Falaq, it is one of the two Surahs of refuge (Mu'awwidhatayn). Its theme is seeking Allah's protection from the whisperer who whispers into the hearts of people, whether from among the jinn or mankind.</p>
-  </div>
-  <div class="credits">
-    <h2>Sources</h2>
-    <p>Arabic text: <a href="https://tanzil.net" target="_blank" rel="noopener">Tanzil Project</a> (Uthmani script, CC-BY 3.0). Urdu translation: Kanz-ul-Iman. English translation: Marmaduke Pickthall. Arabic text is reproduced unchanged.</p>
-  </div>
-  <nav class="prevnext">
-    <a href="/quran-surah-113">&larr; Previous: Surah Al-Falaq (113)</a>
-    <span>Last Surah of the Quran</span>
-  </nav>
-</main>
+<header class="topbar"><a href="/">Ahl-e-Islam</a><span><button onclick="fontStep(-2)">A-</button><button onclick="fontStep(2)">A+</button></span></header>
+<div class="book">
+<p class="crumb"><a href="/">Home</a> / <a href="/quran">Quran</a> / Surah An-Nas</p>
+<div class="head"><div class="orn">✦ ✦ ✦</div><h1>سُورَةُ النَّاسِ</h1><p>سورۃ الناس &nbsp;•&nbsp; مکی &nbsp;•&nbsp; 6 آیات &nbsp;•&nbsp; پارہ 30</p></div>
+<div class="arabic" dir="rtl" lang="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ <span class='marker'>1</span> مَلِكِ ٱلنَّاسِ <span class='marker'>2</span> إِلَٰهِ ٱلنَّاسِ <span class='marker'>3</span> مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ <span class='marker'>4</span> ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ <span class='marker'>5</span> مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ <span class='marker'>6</span></div>
+<p class="note" dir="rtl" lang="ur">عربی متن وہی ہے — تنزیل سے، کوئی لفظ نہیں بدلا۔</p>
+<h2>لفظ بہ لفظ ترجمہ</h2>
+<h3 dir='rtl' lang='ur'>بسم اللہ</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>بِسْمِ</div><div class='wm' dir='rtl' lang='ur'>نام سے</div><div class='we'>In the name</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱللَّهِ</div><div class='wm' dir='rtl' lang='ur'>اللہ</div><div class='we'>Allah</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلرَّحْمَٰنِ</div><div class='wm' dir='rtl' lang='ur'>بہت مہربان</div><div class='we'>Entirely Merciful</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلرَّحِيمِ</div><div class='wm' dir='rtl' lang='ur'>نہایت رحم والا</div><div class='we'>Especially Merciful</div></div></div><h3 dir='rtl' lang='ur'>آیت 1</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>قُلْ</div><div class='wm' dir='rtl' lang='ur'>کہہ دو</div><div class='we'>Say</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>أَعُوذُ</div><div class='wm' dir='rtl' lang='ur'>میں پناہ مانگتا ہوں</div><div class='we'>I seek refuge</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>بِرَبِّ</div><div class='wm' dir='rtl' lang='ur'>رب کی</div><div class='we'>in the Lord</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 2</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>مَلِكِ</div><div class='wm' dir='rtl' lang='ur'>بادشاہ</div><div class='we'>King</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 3</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>إِلَٰهِ</div><div class='wm' dir='rtl' lang='ur'>معبود</div><div class='we'>God</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 4</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>مِن</div><div class='wm' dir='rtl' lang='ur'>سے</div><div class='we'>from</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>شَرِّ</div><div class='wm' dir='rtl' lang='ur'>شر</div><div class='we'>evil</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلْوَسْوَاسِ</div><div class='wm' dir='rtl' lang='ur'>وسوسہ ڈالنے والے</div><div class='we'>whisperer</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلْخَنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>پیچھے ہٹ جانے والے</div><div class='we'>retreating</div></div></div><h3 dir='rtl' lang='ur'>آیت 5</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلَّذِى</div><div class='wm' dir='rtl' lang='ur'>وہ جو</div><div class='we'>who</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>يُوَسْوِسُ</div><div class='wm' dir='rtl' lang='ur'>وسوسہ ڈالتا ہے</div><div class='we'>whispers</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>فِى</div><div class='wm' dir='rtl' lang='ur'>میں</div><div class='we'>in</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>صُدُورِ</div><div class='wm' dir='rtl' lang='ur'>سینوں</div><div class='we'>hearts</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>لوگوں</div><div class='we'>mankind</div></div></div><h3 dir='rtl' lang='ur'>آیت 6</h3><div class='words'><div class='w'><div class='aw' dir='rtl' lang='ar'>مِنَ</div><div class='wm' dir='rtl' lang='ur'>سے</div><div class='we'>from</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>ٱلْجِنَّةِ</div><div class='wm' dir='rtl' lang='ur'>جن</div><div class='we'>jinn</div></div><div class='w'><div class='aw' dir='rtl' lang='ar'>وَٱلنَّاسِ</div><div class='wm' dir='rtl' lang='ur'>اور لوگوں</div><div class='we'>and mankind</div></div></div>
+<h2>ترجمہ — اردو اور انگریزی</h2>
+<table><tbody><tr><td class='n'>1</td><td class='ur' dir='rtl' lang='ur'>تم کہو میں اس کی پناہ میں آیا جو سب لوگوں کا رب</td><td class='en'>Say: I seek refuge in the Lord of mankind,</td></tr><tr><td class='n'>2</td><td class='ur' dir='rtl' lang='ur'>سب لوگوں کا بادشاہ</td><td class='en'>The King of mankind,</td></tr><tr><td class='n'>3</td><td class='ur' dir='rtl' lang='ur'>سب لوگوں کا خدا</td><td class='en'>The god of mankind,</td></tr><tr><td class='n'>4</td><td class='ur' dir='rtl' lang='ur'>اس کے شر سے جو دل میں برے خطرے ڈالے اور دبک رہے</td><td class='en'>From the evil of the sneaking whisperer,</td></tr><tr><td class='n'>5</td><td class='ur' dir='rtl' lang='ur'>وہ جو لوگوں کے دلوں میں وسوسے ڈالتے ہیں،</td><td class='en'>Who whispereth in the hearts of mankind,</td></tr><tr><td class='n'>6</td><td class='ur' dir='rtl' lang='ur'>جن اور آدمی</td><td class='en'>Of the jinn and of mankind.</td></tr></tbody></table>
+<p class="note" dir="rtl" lang="ur">اردو: کنزالایمان &nbsp;•&nbsp; انگریزی: پکتھال</p>
+<h2>تفصیل</h2>
+<div class="tafseel"><table dir="rtl"><tbody><tr><td class='t-h'>سورۃ کا نام اور معنی</td><td>الناس کا مطلب ہے 'لوگ'۔ یہ قرآن پاک کی آخری سورۃ ہے، مکی ہے، 6 آیات ہیں، پارہ 30 میں ہے۔</td></tr><tr><td class='t-h'>اصل موضوع</td><td>اس سورۃ میں اللہ سے پناہ مانگی گئی ہے — اس وسوسے سے جو دلوں میں برا خیال ڈالتا ہے اور پھر چھپ جاتا ہے۔</td></tr><tr><td class='t-h'>تین صفات</td><td>اللہ کو تین صفات سے پکارا گیا ہے: رب (پالنے والا)، مالک (بادشاہ)، الٰہ (معبود)۔ یہ تینوں مل کر بتاتی ہیں کہ پناہ صرف اللہ سے مانگنی چاہیے۔</td></tr><tr><td class='t-h'>فلق کے ساتھ جوڑا</td><td>سورۃ الفلق اور سورۃ الناس کو معوذتین کہتے ہیں — دو پناہ والی سورتیں۔ ایک میں باہر کے شر سے پناہ ہے، اس میں اندر کے وسوسے سے۔</td></tr><tr><td class='t-h'>آیات 1 تا 3</td><td>پہلی تین آیات میں اللہ کی صفات بیان ہوئی ہیں — رب، مالک، الٰہ — تاکہ پناہ مانگنے والا پہلے یہ جان لے کہ وہ کس سے پناہ مانگ رہا ہے۔</td></tr><tr><td class='t-h'>آیات 4 تا 6</td><td>آخری تین آیات میں اس شر کا ذکر ہے جس سے پناہ مانگی گئی: خناس (چھپ کر وسوسہ ڈالنے والا)، جو لوگوں کے دلوں میں وسوسے ڈالتا ہے، چاہے وہ جن ہو یا انسان۔</td></tr></tbody></table></div>
+<div class="sources"><p dir="rtl" lang="ur">ماخذ: عربی — <a href="https://tanzil.net" target="_blank" rel="noopener">تنزیل</a> (عثمانی رسم الخط، CC-BY 3.0، متن میں کوئی تبدیلی نہیں) • اردو ترجمہ — کنزالایمان • انگریزی ترجمہ — پکتھال۔ لفظ بہ لفظ معانی معیاری لفظ بہ لفظ ترجمے سے لیے گئے ہیں۔</p></div>
+<nav class="prevnext"><a href="/quran-surah-113">&larr; Previous: Surah Al-Falaq (113)</a><span>Last Surah of the Quran</span></nav>
+</div>
 <p class="footer">ahleislam.online</p>
 <script>
-let ar=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--ar'))||32;
-let ur=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--ur'))||20;
-function fontStep(d){ar=Math.min(48,Math.max(28,ar+d));ur=Math.min(26,Math.max(18,ur+d));document.documentElement.style.setProperty('--ar',ar+'px');document.documentElement.style.setProperty('--ur',ur+'px');}
-function setLang(l){document.querySelectorAll('.tr-strip').forEach(s=>{const t=s.dataset[l];s.textContent=t;if(l==='ur'){s.dir='rtl';s.lang='ur';s.classList.remove('en');}else{s.dir='ltr';s.lang='en';s.classList.add('en');}});document.getElementById('langUr').classList.toggle('active',l==='ur');document.getElementById('langEn').classList.toggle('active',l==='en');}
-function toggleTheme(){const h=document.documentElement;h.dataset.theme=h.dataset.theme==='dark'?'light':'dark';}
+let ar=35;
+function fontStep(d){ar=Math.min(48,Math.max(28,ar+d));document.documentElement.style.setProperty('--ar',ar+'px');}
 </script>
 </body>
 </html>
