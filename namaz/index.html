@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Namaz Timings — Pakistan Cities | Ahl-e-Islam</title>
+<meta name="description" content="City-wise namaz timings for Pakistan — Karachi method 18°/18°, Hanafi / Shafi Asr toggle.">
+<link rel="canonical" href="https://ahleislam.online/namaz/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand-row">
+      <div class="brand">
+        <img class="brand-logo" src="../assets/logo.png" alt="Ahl-e-Islam — ahleislam.online logo">
+        <p class="brand-tag" data-t="brandTag">Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
+      </div>
+      <nav class="nav" aria-label="Sections">
+        <a href="/namaz" data-t="navNamaz">Namaz</a>
+        <a href="/hijri" data-t="navHijri">Hijri</a>
+        <a href="/zakat" data-t="navZakat">Zakat</a>
+        <a href="/khatam-sharif" data-t="navKhatam">Khatam</a>
+        <a href="/quran" data-t="navSurahs">Surahs</a>
+        <a href="/hadith" data-t="navHadith">Hadith</a>
+      </nav>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button id="lang-en" class="active" type="button">English</button>
+        <button id="lang-ur" type="button">اردو</button>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+
+  <section class="timings" id="timings" style="margin-top:26px">
+    <span class="eyebrow" data-t="navNamaz">Namaz</span>
+    <h1><span data-t="timingsTitle">Today's Namaz Timings</span> — <span id="city-name">Karachi</span></h1>
+    <p class="sub" data-t="timingsSub">Aaj ki namaz ke auqaat — select your city. Asr method can be switched Hanafi / Shafi.</p>
+    <div class="controls">
+      <select id="city" aria-label="Select city"></select>
+      <button id="asr-hanafi" class="active" type="button" data-t="asrHanafi">Asr: Hanafi</button>
+      <button id="asr-shafi" type="button" data-t="asrShafi">Asr: Shafi</button>
+    </div>
+    <div class="times" id="times"></div>
+    <p class="method" data-t="method">Method: University of Islamic Sciences, Karachi — Fajr &amp; Isha at 18°. Times are calculated on this page (no external API), so they stay free and fast. Small differences from your local masjid timetable (1–3 minutes) are normal — method and rounding differ.</p>
+  </section>
+  <p class="sub">Also see: <a href="/quran">Quran — all 114 Surahs</a> • <a href="/">Home</a></p>
+<script src="../assets/js/praytimes.js"></script>
+<script src="../assets/js/lang.js"></script>
+<script>
+(function () {
+  SiteLang.init();
+  var TZ = 5, ORDER = ['fajr', 'sunrise', 'dhuhr', 'asr', 'maghrib', 'isha'];
+  var today = new Date(), asrMode = 'hanafi';
+  var citySel = document.getElementById('city');
+  PrayCalc.CITIES.forEach(function (c) {
+    var o = document.createElement('option'); o.value = c.name; o.textContent = SiteLang.cityName(c.name); citySel.appendChild(o);
+  });
+  var saved = null; try { saved = localStorage.getItem('ahleislam-city'); } catch (e) {}
+  citySel.value = (saved && PrayCalc.CITIES.some(function (c) { return c.name === saved; })) ? saved : 'Karachi';
+  function render() {
+    var city = PrayCalc.CITIES.filter(function (c) { return c.name === citySel.value; })[0] || PrayCalc.CITIES[0];
+    var shadow = asrMode === 'hanafi' ? 2 : 1;
+    var t = PrayCalc.getTimes(today, city.lat, city.lng, TZ, shadow);
+    var box = document.getElementById('times'); box.innerHTML = '';
+    var nowH = new Date().getHours() + new Date().getMinutes() / 60, nextKey = null, best = 1e9;
+    ORDER.forEach(function (k) { var d = t[k] - nowH; if (d > 0 && d < best) { best = d; nextKey = k; } });
+    ORDER.forEach(function (k) {
+      var d = document.createElement('div'); d.className = 'time-card' + (k === nextKey ? ' next' : '');
+      d.innerHTML = '<div class="label">' + SiteLang.prayerName(k) + (k === nextKey ? ' • ' + SiteLang.t('nextTag') : '') + '</div><div class="val">' + PrayCalc.formatTime(t[k]) + '</div>';
+      box.appendChild(d);
+    });
+    document.getElementById('city-name').textContent = SiteLang.cityName(city.name);
+    try { localStorage.setItem('ahleislam-city', city.name); } catch (e) {}
+  }
+  window.onLangChange = function () {
+    var prev = citySel.value; citySel.innerHTML = '';
+    PrayCalc.CITIES.forEach(function (c) { var o = document.createElement('option'); o.value = c.name; o.textContent = SiteLang.cityName(c.name); citySel.appendChild(o); });
+    citySel.value = prev; render();
+  };
+  citySel.addEventListener('change', render);
+  document.getElementById('asr-hanafi').addEventListener('click', function () { asrMode = 'hanafi'; this.classList.add('active'); document.getElementById('asr-shafi').classList.remove('active'); render(); });
+  document.getElementById('asr-shafi').addEventListener('click', function () { asrMode = 'shafi'; this.classList.add('active'); document.getElementById('asr-hanafi').classList.remove('active'); render(); });
+  render();
+})();
+</script>
+
+</main>
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <h3>Ahl-e-Islam</h3>
+      <p data-t="footer">Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. Quran Arabic text comes from the Tanzil project (CC-BY 3.0, text unchanged, with credit and link). Translations are public-domain works, credited by translator name. No account needed to use the tools.</p>
+    </div>
+    <div>
+      <h3 data-t="footSections">Sections</h3>
+      <nav aria-label="Footer sections">
+        <a href="/namaz" data-t="navNamaz">Namaz</a>
+        <a href="/hijri" data-t="navHijri">Hijri</a>
+        <a href="/zakat" data-t="navZakat">Zakat</a>
+        <a href="/khatam-sharif" data-t="navKhatam">Khatam</a>
+        <a href="/quran" data-t="navSurahs">Surahs</a>
+        <a href="/hadith" data-t="navHadith">Hadith</a>
+      </nav>
+    </div>
+    <div>
+      <h3 data-t="footTrust">Method &amp; honesty</h3>
+      <p data-t="footTrustD">Namaz times are calculated on-page (Karachi method, 18°/18°). Hijri dates are tabular — the local moon-sighting date can differ by about 1 day. Hadith are published only with book, number and grade.</p>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>© 2026 Ahl-e-Islam — ahleislam.online</p>
+  </div>
+</footer>
+</body>
+</html>
