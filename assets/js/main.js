@@ -138,11 +138,11 @@
   var INDEX = [
     { title: 'Namaz Timings', desc: 'City-wise daily prayer times + monthly timetable', target: 'timings' },
     { title: 'Next Prayer Countdown', desc: 'Live countdown to the next prayer', target: 'timings' },
-    { title: 'Zakat Calculator', desc: 'Cash, gold, silver, trade goods — 2.5% with tola nisab', target: 'sec-zakat' },
+    
     { title: 'Hijri Converter', desc: 'Gregorian to Hijri date + today Islamic date', target: 'hijri-tool' },
     { title: 'Short Surahs', desc: 'Arabic + Urdu + English with references', target: 'sec-surahs' },
-    { title: 'Hadith', desc: 'Famous Hadith with authentic book references only', target: 'sec-hadith' },
-    { title: 'Khatam Sharif', desc: 'Dua + tariqa + fazilat, with references', target: 'sec-khatam' },
+    
+    
     { title: 'Samundri namaz timing', desc: 'Today prayer times for Samundri', target: 'timings', city: 'Samundri' },
     { title: 'Karachi namaz timing', desc: 'Today prayer times for Karachi', target: 'timings', city: 'Karachi' },
     { title: 'Lahore namaz timing', desc: 'Today prayer times for Lahore', target: 'timings', city: 'Lahore' }
