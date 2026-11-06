@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magazine — Ahl-e-Islam</title>
+<meta name="description" content="Ahl-e-Islam Magazine — monthly Islamic articles. Quran, Seerah, Fiqh aur Akhlaq par.">
+<link rel="icon" href="../assets/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#000}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif}
+.strip{background:#F9F9F9;font-size:13px}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px}
+.strip .date{font-weight:700;text-transform:uppercase}
+.strip .ar{font-family:Amiri,serif;font-size:1.05rem}
+.masthead{background:#fff}
+.masthead .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;gap:16px}
+.brand img{height:72px;display:block}
+.adslot{width:375px;height:90px;background:#1E1E1E;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+nav.black{background:#1E1E1E}
+nav.black .wrap{display:flex;align-items:center;gap:0;padding:0 20px;flex-wrap:wrap}
+nav.black a{color:#fff;text-decoration:none;font-size:16px;padding:16px 18px;display:inline-block}
+nav.black a.home{background:#FF6C00}
+nav.black a.dl{background:#CFD747;color:#fff;margin-left:auto}
+.crumb{background:#FF6C00;color:#fff}
+.crumb .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;gap:14px}
+.crumb b{font-size:15px}
+.crumb input{width:100%;max-width:600px;height:35px;border:none;border-radius:999px;padding:0 18px;font-size:14px;outline:none;font-family:Arial,Helvetica,sans-serif}
+.ticker{border:1px solid #ddd;display:flex;margin:16px 0}
+.ticker .lbl{background:#FF6C00;color:#fff;font-weight:700;text-align:center;padding:12px;width:300px;flex:none}
+.ticker .items{padding:12px;white-space:nowrap;overflow:hidden}
+.ticker a{color:#000;text-decoration:none;margin-right:26px}
+/* Cover hero */
+.hero{position:relative;border-radius:0;overflow:hidden;margin:16px 0 8px}
+.hero img{width:100%;height:420px;object-fit:cover;display:block}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.72) 78%)}
+.hero .txt{position:absolute;left:0;right:0;bottom:0;padding:28px 30px;color:#fff}
+.hero .badge{display:inline-block;background:#FF6C00;color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:6px 14px}
+.hero h1{font-size:42px;margin:12px 0 8px;line-height:1.15}
+.hero p{font-size:17px;margin:0 0 18px;max-width:640px;line-height:1.5}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn-orange{background:#FF6C00;color:#fff;border:none;padding:12px 26px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:15px}
+.btn-ghost{background:transparent;color:#fff;border:2px solid #fff;padding:10px 24px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:15px}
+/* Category chips */
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 6px}
+.chips a{text-decoration:none;color:#000;font-weight:700;font-size:14px;border:1px solid #ddd;border-radius:999px;padding:9px 18px}
+.chips a:hover{border-color:#FF6C00;color:#FF6C00}
+.chips a.hot{background:#FF6C00;border-color:#FF6C00;color:#fff}
+/* Facts strip */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 6px}
+.fact{border:1px solid #E5E5E5;text-align:center;padding:18px 10px}
+.fact b{display:block;font-size:30px;color:#FF6C00}
+.fact span{font-size:14px;color:#555}
+/* Main 2-col */
+.main2{display:grid;grid-template-columns:2fr 1fr;gap:30px;padding:26px 0 40px}
+h2.sec-h{font-size:28px;text-transform:uppercase;border-bottom:1px solid #E5E5E5;padding-bottom:10px;margin:0 0 20px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.acard{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.acard img{width:100%;height:170px;object-fit:cover;display:block}
+.acard .b{padding:16px;text-align:left}
+.acard .tag{display:inline-block;background:#FFE8D6;color:#B34700;font-size:.75rem;font-weight:700;border-radius:999px;padding:3px 9px;margin-bottom:8px}
+.acard h3{margin:0 0 6px;font-size:18px}
+.acard p{font-size:15px;line-height:1.6;margin:0 0 10px;color:#444}
+.acard .meta{font-size:13px;color:#777;margin-bottom:12px}
+.btn-teal{background:#00A9B5;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+/* Inside this issue */
+.contents{border:1px solid #E5E5E5;padding:20px;margin-bottom:28px}
+.contents ol{list-style:none;margin:0;padding:0}
+.contents li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid #eee}
+.contents li:last-child{border-bottom:none}
+.contents .n{flex:none;width:30px;height:30px;border-radius:50%;background:#FF6C00;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+.contents a{color:#000;text-decoration:none;font-weight:700}
+.contents span{display:block;font-weight:400;font-size:13px;color:#777}
+/* Quiz teaser */
+.quiz-box{background:#1E1E1E;color:#fff;padding:22px;margin-bottom:28px}
+.quiz-box h3{margin:0 0 8px;font-size:20px;color:#CFD747}
+.quiz-box p{margin:0 0 14px;line-height:1.6;color:#ddd}
+.btn-lime{background:#CFD747;color:#1E1E1E;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.social{display:grid;gap:10px;margin-bottom:28px}
+.social a{color:#fff;text-decoration:none;font-weight:700;text-transform:uppercase;text-align:center;padding:13px;font-size:15px}
+.fb{background:#3B5998}.tw{background:#1DA1F2}.gm{background:#DD4B39}
+.glance{display:grid;gap:14px}
+.glance a{display:flex;gap:12px;text-decoration:none;color:#000}
+.glance img{width:90px;height:90px;object-fit:cover;flex:none}
+.glance .cat{font-weight:700;text-decoration:underline;font-size:17px}
+.glance .t{font-size:17px}
+.videos{background:#F2F2F2;padding:34px 0}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vthumb{position:relative}
+.vthumb img{width:100%;display:block;border-radius:0 0 15px 15px}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#FF6C00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px}
+.vgrid h3{font-size:18px;margin:10px 0 0}
+.books{padding:34px 0}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.bgrid img{width:180px;height:270px;object-fit:cover}
+.bgrid h3{font-size:18px;margin:12px 0 0}
+footer{background:#1E1E1E;color:#fff;text-align:center;padding:14px 20px;font-size:.9rem}
+@media(max-width:800px){.main2{grid-template-columns:1fr}.cards2,.vgrid,.bgrid{grid-template-columns:1fr 1fr}.facts{grid-template-columns:1fr 1fr}.hero img{height:300px}.hero h1{font-size:30px}.adslot{display:none}}
+@media(max-width:520px){.cards2,.vgrid,.bgrid{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="strip"><div class="wrap">
+<span class="date" id="greg-date">…</span>
+<span class="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+</div></div>
+<div class="masthead"><div class="wrap">
+<a class="brand" href="/"><img src="../assets/logo.png" alt="Ahl-e-Islam Magazine"></a>
+<div class="adslot">Ahl-e-Islam Magazine</div>
+</div></div>
+<nav class="black"><div class="wrap">
+<a href="/">⌂ Home</a>
+<a href="/today">Today</a>
+<a href="/quran-pak">Quran Pak</a>
+<a href="/islamic-games/">Quiz</a>
+<a href="/blog/">Blog</a>
+<a href="/islamic-images/">Images</a>
+<a class="home" href="/magazine/">Magazine</a>
+<a class="dl" href="/magazine/">⬇ Download Magazine</a>
+</div></nav>
+<div class="crumb"><div class="wrap">
+<b>Home › Magazine</b>
+<input id="mag-search" type="search" placeholder="Search magazine..." aria-label="Search magazine">
+</div></div>
+<div class="wrap">
+<div class="ticker">
+<div class="lbl">Latest Articles</div>
+<div class="items"><a href="/blog/zakat-kab-farz-hoti-hai/">Zakat Kab Farz Hoti Hai?</a><a href="/quran-pak">Quran Pak — 114 Surahs</a><a href="/today">Today — Namaz Timings</a></div>
+</div>
+
+<section class="hero">
+<img src="../assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt="Mosque at golden dawn — Ahl-e-Islam Magazine cover">
+<div class="shade"></div>
+<div class="txt">
+<span class="badge">Issue #1 — November 2026</span>
+<h1>Ahl-e-Islam Magazine</h1>
+<p>Har mahine — Quran, Seerah, Fiqh aur Akhlaq par seedhi zaban me articles. Pehla issue: Zakat kab farz hoti hai?</p>
+<div class="cta">
+<a class="btn-orange" href="/blog/zakat-kab-farz-hoti-hai/">Read Issue #1 →</a>
+<a class="btn-ghost" href="/blog/">All Articles</a>
+</div>
+</div>
+</section>
+
+<div class="chips">
+<a class="hot" href="/blog/">All</a>
+<a href="/blog/">Quran</a>
+<a href="/blog/">Seerah</a>
+<a href="/blog/">Fiqh</a>
+<a href="/blog/">Akhlaq</a>
+</div>
+
+<div class="facts">
+<div class="fact"><b>114</b><span>Surahs</span></div>
+<div class="fact"><b>6,236</b><span>Ayat</span></div>
+<div class="fact"><b>30</b><span>Para</span></div>
+<div class="fact"><b>1,104</b><span>Quiz Questions</span></div>
+</div>
+
+<div class="main2">
+<div>
+<h2 class="sec-h">Featured Articles</h2>
+<div class="cards2">
+<article class="acard">
+<img src="../assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt="Quran on rehal">
+<div class="b"><span class="tag">Fiqh</span><h3>Zakat Kab Farz Hoti Hai?</h3><p>Nisab, 2.5% sharah aur hisab — 5 shartein, aik misaal, aam sawalon ke jawab.</p><div class="meta">5 min read • Roman Urdu, English, اردو</div><a class="btn-teal" href="/blog/zakat-kab-farz-hoti-hai/">Read Article</a></div>
+</article>
+<article class="acard">
+<img src="../assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt="Mosque at dawn">
+<div class="b"><span class="tag">Namaz</span><h3>Today — Namaz &amp; Tareekh</h3><p>Aaj ki Hijri tareekh aur namaz ke auqaat, aik hi page par.</p><div class="meta">Live tool • 19 cities</div><a class="btn-teal" href="/today">Open Today</a></div>
+</article>
+<article class="acard">
+<img src="../assets/images/media-generation-gallery-ramadan-lanterns-0-98221291-38d9-4cef-a833-bc86548c0f9e.webp" alt="Ramadan lanterns">
+<div class="b"><span class="tag">Ramadan</span><h3>Ramadan — Tayyari Kaise Karein?</h3><p>Rehmat, maghfirat aur barkat ka mahina — Sehr aur Iftar ki tayyari.</p><div class="meta">Coming in Issue #2</div><a class="btn-teal" href="/blog/">Read Article</a></div>
+</article>
+<article class="acard">
+<img src="../assets/images/media-generation-gallery-geometric-pattern-0-39696b8d-ac1c-41e5-bc25-13a01cfc190a.webp" alt="Islamic pattern">
+<div class="b"><span class="tag">Quran</span><h3>Quran Pak — 114 Surahs</h3><p>Asli Arabic text, Urdu aur English tarjuma — Surah aur Para, dono.</p><div class="meta">114 Surahs • 30 Para</div><a class="btn-teal" href="/quran-pak">Read Quran</a></div>
+</article>
+</div>
+</div>
+<aside>
+<div class="contents">
+<h2 class="sec-h">In This Issue</h2>
+<ol>
+<li><span class="n">1</span><a href="/blog/zakat-kab-farz-hoti-hai/">Zakat Kab Farz Hoti Hai?<span>Fiqh • Nisab 2026, 2.5% sharah</span></a></li>
+<li><span class="n">2</span><a href="/quran-pak">Quran Pak — Surah &amp; Para<span>114 Surahs • Asli Arabic text</span></a></li>
+<li><span class="n">3</span><a href="/today">Today — Namaz Timings<span>19 cities • Sehri &amp; Iftar</span></a></li>
+<li><span class="n">4</span><a href="/islamic-games/quiz/">Quiz — 4 Sawal, 10 Second<span>Rozana naya quiz</span></a></li>
+</ol>
+</div>
+<div class="quiz-box">
+<h3>Aaj ka Quiz — Kheliye!</h3>
+<p>4 sawal, har sawal ke liye 10 second. Aakhri sawal ka jawab comment me!</p>
+<a class="btn-lime" href="/islamic-games/quiz/">Quiz Kheliye →</a>
+</div>
+<h2 class="sec-h">Follow Us</h2>
+<div class="social">
+<a class="fb" href="https://www.youtube.com/@AhleIslamonline">YouTube</a>
+<a class="tw" href="https://ahleislam.online">Website</a>
+<a class="gm" href="mailto:hina400900@gmail.com">Email</a>
+</div>
+<h2 class="sec-h">Magazine in a Glance</h2>
+<div class="glance">
+<a href="/blog/zakat-kab-farz-hoti-hai/"><img src="../assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt=""><span><span class="cat">Fiqh</span><br><span class="t">Zakat Kab Farz Hoti Hai?</span></span></a>
+<a href="/quran-pak"><img src="../assets/images/media-generation-gallery-geometric-pattern-0-39696b8d-ac1c-41e5-bc25-13a01cfc190a.webp" alt=""><span><span class="cat">Quran</span><br><span class="t">Quran Pak — Surah &amp; Para</span></span></a>
+<a href="/today"><img src="../assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt=""><span><span class="cat">Namaz</span><br><span class="t">Today — Namaz Timings</span></span></a>
+</div>
+</aside>
+</div>
+</div>
+<section class="videos"><div class="wrap">
+<h2 class="sec-h">Watch More Videos</h2>
+<div class="vgrid">
+<div><div class="vthumb"><img src="../assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt=""><span class="play">▶</span></div><h3>Quran Quiz Shorts</h3></div>
+<div><div class="vthumb"><img src="../assets/images/media-generation-gallery-ramadan-lanterns-0-98221291-38d9-4cef-a833-bc86548c0f9e.webp" alt=""><span class="play">▶</span></div><h3>Ramadan Special</h3></div>
+<div><div class="vthumb"><img src="../assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt=""><span class="play">▶</span></div><h3>Masjid at Dawn</h3></div>
+</div>
+</div></section>
+<section class="books"><div class="wrap">
+<h2 class="sec-h">Read More Books</h2>
+<div class="bgrid">
+<div><img src="../assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt=""><h3>Quran Pak</h3></div>
+<div><img src="../assets/images/media-generation-gallery-geometric-pattern-0-39696b8d-ac1c-41e5-bc25-13a01cfc190a.webp" alt=""><h3>Islamic Pattern</h3></div>
+<div><img src="../assets/images/media-generation-gallery-ramadan-lanterns-0-98221291-38d9-4cef-a833-bc86548c0f9e.webp" alt=""><h3>Ramadan</h3></div>
+<div><img src="../assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt=""><h3>Masjid</h3></div>
+</div>
+</div></section>
+<footer>© 2026 Ahl-e-Islam — ahleislam.online</footer>
+<script>
+document.getElementById('greg-date').textContent = new Date().toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+document.getElementById('mag-search').addEventListener('input', function(){
+  var q = this.value.trim().toLowerCase();
+  document.querySelectorAll('.acard').forEach(function(c){
+    c.style.display = (!q || c.textContent.toLowerCase().indexOf(q) !== -1) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>
