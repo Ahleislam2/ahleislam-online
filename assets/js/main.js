@@ -1,4 +1,4 @@
-/* Ahl-e-Islam v2 home logic: Hijri date, city prayer times + live next-prayer countdown, Hijri converter mini, site search. */
+/* Ahl-e-Islam v2 home logic — Hanafi-only build (Shafi toggle removed 2026-11-06): Hijri date, city prayer times + live next-prayer countdown, Hijri converter mini, site search. */
 (function () {
   var TZ = 5; // Pakistan Standard Time (UTC+5, no daylight saving)
   var ORDER = [['fajr', 'Fajr'], ['sunrise', 'Sunrise'], ['dhuhr', 'Dhuhr'],
@@ -104,13 +104,6 @@
   document.getElementById('asr-hanafi').addEventListener('click', function () {
     asrMode = 'hanafi';
     this.classList.add('active');
-    document.getElementById('asr-shafi').classList.remove('active');
-    renderTimes();
-  });
-  document.getElementById('asr-shafi').addEventListener('click', function () {
-    asrMode = 'shafi';
-    this.classList.add('active');
-    document.getElementById('asr-hanafi').classList.remove('active');
     renderTimes();
   });
   renderTimes();
