@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Today — Namaz Timings, Hijri Date, Jantri | Ahl-e-Islam</title>
+<meta name="description" content="Aaj ki Hijri aur Gregorian tareekh, sheher ke namaz timings, agli namaz countdown, Sehri/Iftar, Hijri converter aur monthly jantri — Ahl-e-Sunnat (Hanafi).">
+<link rel="canonical" href="https://ahleislam.online/today/">
+<link rel="icon" href="../favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#000}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif}
+.strip{background:#F9F9F9;font-size:13px}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px;flex-wrap:wrap}
+.strip .date{font-weight:700;text-transform:uppercase}
+.strip .ar{font-family:Amiri,serif;font-size:1.05rem}
+.langs{display:flex;gap:6px;flex-wrap:wrap}
+.langs button{border:1px solid #ddd;background:#fff;border-radius:4px;padding:6px 10px;cursor:pointer;font-weight:600}
+.langs button.active{background:#FF6C00;border-color:#FF6C00;color:#fff}
+.masthead{background:#fff}
+.masthead .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;gap:16px}
+.brand img{height:72px;display:block}
+.adslot{width:375px;height:90px;background:#1E1E1E;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+nav.black{background:#1E1E1E}
+nav.black .wrap{display:flex;align-items:center;padding:0 20px;flex-wrap:wrap}
+nav.black a{color:#fff;text-decoration:none;font-size:16px;padding:16px 18px;display:inline-block}
+nav.black a.home{background:#FF6C00}
+nav.black a.dl{background:#CFD747;color:#fff;margin-left:auto}
+.crumb{background:#FF6C00;color:#fff}
+.crumb .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;gap:14px}
+.crumb b{font-size:15px}
+.crumb input{width:100%;max-width:600px;height:35px;border:none;border-radius:999px;padding:0 18px;font-size:14px;outline:none;font-family:Arial,Helvetica,sans-serif}
+.ticker{border:1px solid #ddd;display:flex;margin:16px 0}
+.ticker .lbl{background:#FF6C00;color:#fff;font-weight:700;text-align:center;padding:12px;width:300px;flex:none}
+.ticker .items{padding:12px;white-space:nowrap;overflow:hidden}
+.ticker a{color:#000;text-decoration:none;margin-right:26px}
+.collage{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:5px;margin:10px 0}
+.collage img{width:100%;height:100%;object-fit:cover;display:block}
+.collage .tall{grid-row:span 2}
+.main2{display:grid;grid-template-columns:2fr 1fr;gap:30px;padding:26px 0 40px}
+h2.sec-h{font-size:28px;text-transform:uppercase;border-bottom:1px solid #E5E5E5;padding-bottom:10px;margin:0 0 20px}
+.today-card{border:1px solid #E5E5E5;padding:20px;margin-bottom:20px}
+.today-card h3{margin:0 0 8px;font-size:20px}
+.hijri-big{font-size:1.4rem;font-weight:700}
+.greg{color:#555;margin-top:4px}
+.next-name{font-size:1.5rem;font-weight:700}
+.countdown{font-size:1.6rem;font-weight:700;color:#FF6C00}
+.progress{height:8px;background:#eee;margin:12px 0;overflow:hidden}
+.progress .bar{height:100%;background:#FF6C00;width:0}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.time-box{border:1px solid #E5E5E5;padding:12px;text-align:center}
+.time-box b{display:block;font-size:1.05rem}
+.time-box span{color:#555;font-size:.9rem}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+.controls select{padding:9px 12px;border:1px solid #ddd;font-size:15px;font-family:Arial,Helvetica,sans-serif}
+.conv-box{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.conv-box input{padding:9px 12px;border:1px solid #ddd;font-size:15px}
+.conv-box button{background:#FF6C00;color:#fff;border:none;padding:10px 18px;font-weight:700;cursor:pointer}
+.btn-teal{background:#00A9B5;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.btn-orange{background:#FF6C00;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.acard{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.acard img{width:100%;display:block}
+.acard .b{padding:16px;text-align:center}
+.acard h3{margin:0 0 8px;font-size:18px}
+.acard p{font-size:15px;line-height:1.6;margin:0 0 14px}
+.social{display:grid;gap:10px;margin-bottom:28px}
+.social a{color:#fff;text-decoration:none;font-weight:700;text-transform:uppercase;text-align:center;padding:13px;font-size:15px}
+.fb{background:#3B5998}.tw{background:#1DA1F2}.gm{background:#DD4B39}
+.glance{display:grid;gap:14px}
+.glance a{display:flex;gap:12px;text-decoration:none;color:#000}
+.glance img{width:90px;height:90px;object-fit:cover;flex:none}
+.glance .cat{font-weight:700;text-decoration:underline;font-size:17px}
+.glance .t{font-size:17px}
+.videos{background:#F2F2F2;padding:34px 0}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vthumb{position:relative}
+.vthumb img{width:100%;display:block;border-radius:0 0 15px 15px}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#FF6C00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px}
+.vgrid h3{font-size:18px;margin:10px 0 0}
+.books{padding:34px 0}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.bgrid a{text-decoration:none;color:#000}
+.bgrid img{width:180px;height:270px;object-fit:cover}
+.bgrid h3{font-size:18px;margin:12px 0 0}
+footer{background:#1E1E1E;color:#fff;text-align:center;padding:14px 20px;font-size:.9rem}
+@media(max-width:800px){.main2{grid-template-columns:1fr}.cards2,.vgrid,.bgrid{grid-template-columns:1fr 1fr}.collage{grid-template-columns:1fr 1fr}.adslot{display:none}}
+@media(max-width:520px){.cards2,.vgrid,.bgrid{grid-template-columns:1fr}.times{grid-template-columns:1fr 1fr}}
+</style>
+<style>
+.time-card{background:#fff;border:1px solid #E5E5E5}
+.time-card.next{background:#FFE8D6;border-color:#FF6C00}
+.time-card .label{color:#555}
+.time-card .val{color:#000}
+.asr-badge{display:inline-block;background:#FFE8D6;color:#B34700;font-weight:700;border-radius:999px;padding:6px 14px;font-size:.9rem}
+.conv-box button{background:#FF6C00}
+.conv-box button:hover{background:#B34700}
+.conv-result{color:#000}
+.hijri-big{color:#000}
+.today-card .greg{color:#555}
+.cal-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.cal-nav button{padding:11px 20px;border-radius:999px;border:1px solid #E5E5E5;background:#fff;font-size:.95rem;cursor:pointer;font-family:inherit;font-weight:600;color:#000}
+.cal-nav button:hover{background:#FFE8D6}
+.cal-jump{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:4px 0 12px}
+.cal-jump label{font-weight:600;color:#000}
+.cal-jump select{padding:11px 16px;border-radius:999px;border:1px solid #E5E5E5;background:#fff;font-family:inherit;font-size:.95rem;cursor:pointer}
+.cal-title{font-family:Arial,Helvetica,sans-serif;font-size:1.5rem;color:#000;flex:1;text-align:center;min-width:220px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:16px}
+.cal-head{font-weight:700;color:#FF6C00;text-align:center;padding:8px 2px;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+.cal-cell{background:#fff;border:1px solid #E5E5E5;border-radius:12px;padding:10px 4px 8px;text-align:center;min-height:96px}
+.cal-cell .g{color:#555;font-size:.85rem}
+.cal-cell .h{font-family:Arial,Helvetica,sans-serif;font-size:1.45rem;font-weight:700;color:#000;line-height:1.2}
+.cal-cell .m{color:#FF6C00;font-size:.72rem;font-weight:700;min-height:1.1em}
+.cal-cell.today{background:#FF6C00;border-color:#FF6C00}
+.cal-cell.today .g{color:#FFE8D6}
+.cal-cell.today .h{color:#fff}
+.cal-cell.today .m{color:#fff}
+.cal-cell.ramadan{border-color:#FF6C00;background:#FFE8D6}
+.cal-cell.today.ramadan{background:#FF6C00}
+.year-table{width:100%;border-collapse:collapse;margin-top:12px}
+.year-table th{text-align:left;color:#FF6C00;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;padding:10px 12px;border-bottom:2px solid #E5E5E5}
+.year-table td{padding:11px 12px;border-bottom:1px solid #E5E5E5}
+.year-table td strong{color:#000}
+.year-table td span{color:#555}
+.year-table tr.ramadan td{background:#FFE8D6}
+.day-label{font-size:.7rem;font-weight:700;line-height:1.25;margin-top:2px}
+.day-label.urs{color:#8a6d1f}
+.day-label.eid{color:#000}
+.day-label.day{color:#555}
+.cal-cell.today .day-label{color:#FFE8D6}
+.cal-cell.today .day-label.eid{color:#fff}
+@media(max-width:520px){.cal-cell{min-height:66px;padding:8px 2px}.cal-cell .h{font-size:1.2rem}.cal-title{font-size:1.25rem}}
+</style>
+</head>
+<body>
+<div class="strip"><div class="wrap">
+<span class="date" id="greg-date">…</span>
+<span class="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+<span class="langs" role="group" aria-label="Language">
+<button type="button" data-l5="en">English (US)</button>
+<button type="button" data-l5="ur">اردو (PK)</button>
+<button type="button" data-l5="ro" class="active">Roman Urdu</button>
+<button type="button" data-l5="ar">العربية (SA)</button>
+<button type="button" data-l5="hi">हिन्दी (IN)</button>
+</span>
+</div></div>
+<div class="masthead"><div class="wrap">
+<a class="brand" href="/"><img src="../assets/logo.png" alt="Ahl-e-Islam"></a>
+<div class="adslot">Ahl-e-Islam — ahleislam.online</div>
+</div></div>
+<nav class="black"><div class="wrap">
+<a href="/">⌂ Home</a>
+<a class="home" href="/today">Today</a>
+<a href="/quran-pak">Quran Pak</a>
+<a href="/islamic-games/">Quiz</a>
+<a href="/blog/">Blog</a>
+<a href="/islamic-images/">Images</a>
+<a href="/magazine/">Magazine</a>
+<a class="dl" href="/magazine/">⬇ Download Magazine</a>
+</div></nav>
+<div class="crumb"><div class="wrap">
+<b>Home / Today</b>
+<input id="site-search" type="search" placeholder="Search..." aria-label="Search site"><span id="suggest"></span>
+</div></div>
+<div class="wrap">
+<div class="today-card" style="margin-top:26px">
+<h2 class="sec-h" data-k="todayH">Today</h2>
+<div class="hijri-big" id="hijri-date">…</div>
+<div class="greg" id="greg-date-2">…</div>
+<span class="pill" style="background:#FFE8D6;color:#B34700">Hijri date (tabular) — moon-sighting date can differ by about 1 day</span>
+<h3 style="margin-top:18px">Next Prayer • <span id="hero-city">Karachi</span></h3>
+<div class="next-name"><span id="next-name">…</span> • <span id="next-time">…</span></div>
+<div class="countdown" id="countdown">--:--:--</div>
+<div class="progress"><div class="bar" id="progress-bar"></div></div>
+<div>Sehri: <b id="sehri-time">…</b> &nbsp;•&nbsp; Iftar: <b id="iftar-time">…</b></div>
+</div>
+<div class="today-card" id="timings">
+<h2 class="sec-h">Today's Namaz Timings — <span id="city-name">Karachi</span></h2>
+<div class="controls">
+<label for="city">Sheher:</label>
+<select id="city" aria-label="Select city"></select>
+<span id="asr-hanafi" class="asr-badge">Asr: Hanafi</span>
+</div>
+<p class="greg" style="margin:0 0 12px">Ahl-e-Sunnat (Hanafi) — Karachi method 18°/18°. Masjid ke auqaat se 1–3 minute ka farq ho sakta hai.</p>
+<div class="times" id="times"></div>
+</div>
+<div class="today-card" id="hijri-tool">
+<h2 class="sec-h" data-k="convH">Hijri Converter</h2>
+<p class="greg">Kisi bhi Gregorian tareekh ka Hijri date nikalein.</p>
+<div class="conv-box">
+<label for="conv-date">Gregorian date</label>
+<input id="conv-date" type="date">
+<button id="conv-btn" type="button">Convert</button>
+<div class="conv-result" id="conv-result">—</div>
+</div>
+<p class="greg" style="margin-top:10px">Tabular (calculated) Hijri date. Pakistan me elan-shuda (moon-sighting) date 1 din aage-peeche ho sakti hai.</p>
+</div>
+<div class="today-card" id="jantri">
+<h2 class="sec-h" data-k="jantriH">Hijri Jantri — Monthly Calendar</h2>
+<p class="greg">Har din ke neeche us ki Hijri tareekh hai. Tabular hisaab hai — Pakistan ki elan-shuda tareekh 1 din aage-peeche ho sakti hai.</p>
+<div class="cal-nav">
+<button id="cal-prev" type="button">‹ Pichla</button>
+<div class="cal-title" id="cal-title">—</div>
+<button id="cal-next" type="button">Agla ›</button>
+</div>
+<div class="cal-jump">
+<label for="cal-month">Seedha mahina chunein:</label>
+<select id="cal-month" aria-label="Select month"></select>
+<select id="cal-year" aria-label="Select year"></select>
+</div>
+<div class="cal-grid" id="cal-grid"></div>
+<h2 style="margin-top:28px">Is Hijri Saal ki Jantri</h2>
+<p class="greg" id="year-title">Har Hijri mahine ki shuru ki (tabular) Gregorian tareekh.</p>
+<div id="year-list"></div>
+</div>
+<div class="today-card" id="sunni-jantri">
+<h2 class="sec-h" data-k="sunniH">Sunni Jantri</h2>
+<p class="greg">Mashhoor Urs, Khatam aur Din — Hijri month/day se fixed. Gregorian tareekh tabular hisaab se hai, chand dekhne par 1 din aage-peeche ho sakti hai.</p>
+<h3>Har Mahine — Khatam ke Din</h3>
+<p class="greg"><strong>Chatti Sharif — har mahine ki 6 tareekh:</strong> Khwaja Garib Nawaz ki yaad me — Quran, Zikr, Fatiha, Isal-e-Sawab.<br><strong>Gyarvi Sharif — har mahine ki 11 tareekh:</strong> Ghaus-e-Azam ki yaad me — Quran, Zikr, Fatiha, Isal-e-Sawab.<br>Saalana bara Urs: Chatti Sharif 6 Rajab (Ajmer Sharif), Gyarvi Sharif 11 Rabi al-Thani (Baghdad Sharif).</p>
+<h3>Saal Bhar ke Din — Hijri Tarteeb se</h3>
+<div id="sunni-list"></div>
+<p class="greg" style="margin-top:12px">Note: Kuch buzurgon ki Urs tareekh mukhtalif lists me 1-2 din alag bhi milti hai (jaise Data Sahib 18-20 Safar). Shab-e-Qadr ki exact raat maloom nahi — aakhri taaq raaton me talash ki jati hai, 27 ko aam tor par zyada zikr kiya jata hai.</p>
+</div>
+<p class="greg" style="margin:0 0 40px">Also see: <a href="/quran-pak">Quran Pak</a> • <a href="/islamic-games/">Quiz</a> • <a href="/blog/">Blog</a> • <a href="/">Home</a></p>
+</div>
+<footer>© 2026 Ahl-e-Islam — ahleislam.online</footer><script src="../assets/js/praytimes.js"></script>
+<script src="../assets/js/hijri.js"></script>
+<script src="../assets/js/lang.js"></script>
+<script src="../assets/js/main.js"></script>
+<script>
+/* Jantri — ported verbatim from live /islamic-calendar/ (SUNNI_DAYS data + monthly/year renders).
+   Dates + converter are handled by main.js; this block only renders the jantri. */
+SiteLang.init();
+var todayJ = new Date();
+var SUNNI_DAYS = [
+    { m: 1, d: 1, label: 'Islamic New Year', type: 'day' },
+    { m: 1, d: 5, label: 'Urs Baba Farid', place: 'Pakpattan', type: 'urs' },
+    { m: 1, d: 10, label: 'Ashura', type: 'day' },
+    { m: 2, d: 18, end: 20, label: 'Urs Data Ganj Bakhsh', place: 'Lahore', type: 'urs' },
+    { m: 2, d: 25, label: 'Urs Ala Hazrat', place: 'Bareilly', type: 'urs' },
+    { m: 3, d: 7, label: 'Urs Mian Mir', place: 'Lahore', type: 'urs' },
+    { m: 3, d: 12, label: 'Eid Milad-un-Nabi', type: 'day' },
+    { m: 4, d: 11, label: 'Urs Ghaus-e-Azam', place: 'Baghdad', type: 'urs' },
+    { m: 7, d: 1, end: 6, label: 'Urs Khwaja Garib Nawaz', place: 'Ajmer', type: 'urs' },
+    { m: 7, d: 27, label: 'Shab-e-Miraj', type: 'day' },
+    { m: 8, d: 15, label: 'Shab-e-Barat', type: 'day' },
+    { m: 8, d: 18, end: 20, label: 'Urs Lal Shahbaz Qalandar', place: 'Sehwan', type: 'urs' },
+    { m: 9, d: 1, label: 'Ramadan Shuru', type: 'day' },
+    { m: 9, d: 27, label: 'Shab-e-Qadr (zyada zikr)', type: 'day' },
+    { m: 10, d: 1, label: 'Eid-ul-Fitr', type: 'eid' },
+    { m: 12, d: 8, end: 13, label: 'Hajj ke Din', type: 'day' },
+    { m: 12, d: 9, label: 'Day of Arafah', type: 'day' },
+    { m: 12, d: 10, label: 'Eid-ul-Adha', type: 'eid' }
+];
+function sunniFor(h) {
+  var out = [];
+  SUNNI_DAYS.forEach(function (e) {
+    var end = e.end || e.d;
+    if (h.month === e.m && h.day >= e.d && h.day <= end) out.push(e);
+  });
+  if (h.day === 6 && h.month !== 7) out.push({ label: 'Chatti Sharif', type: 'urs' });
+  if (h.day === 11 && h.month !== 4) out.push({ label: 'Gyarvi Sharif', type: 'urs' });
+  return out;
+}
+function gregStr(d) {
+  try { return d.toLocaleDateString(SiteLang.getLang() === 'ur' ? 'ur-PK' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return d.toDateString(); }
+}
+function renderSunniList() {
+  var sorted = SUNNI_DAYS.slice().sort(function (a, b) { return (a.m - b.m) || (a.d - b.d); });
+  var rows = '<table class="year-table"><tr><th>Hijri Tareekh</th><th>Din / Urs</th><th>Agli Tareekh (Tabular)</th></tr>';
+  sorted.forEach(function (e) {
+    var dateStr = e.d + (e.end ? '–' + e.end : '') + ' ' + HijriCalc.MONTHS[e.m - 1];
+    var nd = new Date(todayJ), guard = 0, found = '—';
+    while (guard++ < 400) {
+      var hh = HijriCalc.gregorianToHijri(nd);
+      if (hh.month === e.m && hh.day === e.d) { found = gregStr(nd); break; }
+      nd.setDate(nd.getDate() + 1);
+    }
+    rows += '<tr><td><strong>' + dateStr + '</strong></td><td>' + e.label + (e.place ? ' — ' + e.place : '') + '</td><td><span>' + found + '</span></td></tr>';
+  });
+  rows += '</table>';
+  document.getElementById('sunni-list').innerHTML = rows;
+}
+var calYear = todayJ.getFullYear(), calMonth = todayJ.getMonth();
+function syncJump() {
+  var lang = SiteLang.getLang() === 'ur' ? 'ur-PK' : 'en-GB';
+  var ms = document.getElementById('cal-month'); ms.innerHTML = '';
+  for (var m = 0; m < 12; m++) {
+    var o = document.createElement('option'); o.value = m;
+    try { o.textContent = new Date(2000, m, 1).toLocaleDateString(lang, { month: 'long' }); } catch (e) { o.textContent = ['January','February','March','April','May','June','July','August','September','October','November','December'][m]; }
+    ms.appendChild(o);
+  }
+  ms.value = String(calMonth);
+  var ys = document.getElementById('cal-year'); ys.innerHTML = '';
+  for (var y = todayJ.getFullYear() - 2; y <= todayJ.getFullYear() + 5; y++) {
+    var oy = document.createElement('option'); oy.value = y; oy.textContent = y; ys.appendChild(oy);
+  }
+  ys.value = String(calYear);
+}
+function renderCalendar() {
+  var first = new Date(calYear, calMonth, 1);
+  var days = new Date(calYear, calMonth + 1, 0).getDate();
+  var heads = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  var html = heads.map(function (h) { return '<div class="cal-head">' + h + '</div>'; }).join('');
+  for (var b = 0; b < first.getDay(); b++) html += '<div></div>';
+  var seen = [];
+  for (var d = 1; d <= days; d++) {
+    var gd = new Date(calYear, calMonth, d);
+    var h = HijriCalc.gregorianToHijri(gd);
+    var label = h.monthName + ' ' + h.year;
+    if (seen.indexOf(label) === -1) seen.push(label);
+    var isToday = gd.getFullYear() === todayJ.getFullYear() && gd.getMonth() === todayJ.getMonth() && gd.getDate() === todayJ.getDate();
+    var cls = 'cal-cell' + (isToday ? ' today' : '') + (h.monthName === 'Ramadan' ? ' ramadan' : '');
+    var labels = sunniFor(h).map(function (e) { return '<div class="day-label ' + e.type + '">' + e.label + '</div>'; }).join('');
+    html += '<div class="' + cls + '"><div class="g">' + d + '</div><div class="h">' + h.day + '</div><div class="m">' + (h.day === 1 ? h.monthName : '') + '</div>' + labels + '</div>';
+  }
+  document.getElementById('cal-grid').innerHTML = html;
+  try { document.getElementById('cal-title').textContent = first.toLocaleDateString(SiteLang.getLang() === 'ur' ? 'ur-PK' : 'en-GB', { month: 'long', year: 'numeric' }) + ' — ' + seen.join(' / '); } catch (e) {}
+  syncJump();
+}
+function renderYearList() {
+  var hy = HijriCalc.gregorianToHijri(todayJ).year;
+  var d = new Date(todayJ), guard = 0;
+  while (guard++ < 400) {
+    var hh = HijriCalc.gregorianToHijri(d);
+    if (hh.day === 1 && hh.month === 1 && hh.year === hy) break;
+    d.setDate(d.getDate() - 1);
+  }
+  var rows = '<table class="year-table"><tr><th>Hijri Mahina</th><th>Shuru (Gregorian)</th></tr>';
+  for (var m = 1; m <= 12; m++) {
+    var start = new Date(d), startH = HijriCalc.gregorianToHijri(start);
+    rows += '<tr' + (startH.monthName === 'Ramadan' ? ' class="ramadan"' : '') + '><td><strong>' + startH.monthName + ' ' + hy + '</strong></td><td><span>' + gregStr(start) + '</span></td></tr>';
+    var g2 = 0;
+    while (g2++ < 35) {
+      d.setDate(d.getDate() + 1);
+      var nh = HijriCalc.gregorianToHijri(d);
+      if (nh.year !== hy || nh.month !== m) break;
+    }
+  }
+  rows += '</table>';
+  document.getElementById('year-title').textContent = 'Hijri saal ' + hy + ' — har mahine ki shuru ki (tabular) Gregorian tareekh.';
+  document.getElementById('year-list').innerHTML = rows;
+}
+function renderJantri() { renderCalendar(); renderYearList(); renderSunniList(); }
+window.onLangChange = function () { renderJantri(); };
+document.getElementById('cal-prev').addEventListener('click', function () { calMonth--; if (calMonth < 0) { calMonth = 11; calYear--; } renderCalendar(); });
+document.getElementById('cal-next').addEventListener('click', function () { calMonth++; if (calMonth > 11) { calMonth = 0; calYear++; } renderCalendar(); });
+document.getElementById('cal-month').addEventListener('change', function () { calMonth = parseInt(this.value, 10); renderCalendar(); });
+document.getElementById('cal-year').addEventListener('change', function () { calYear = parseInt(this.value, 10); renderCalendar(); });
+renderJantri();
+</script>
+<script>
+/* Mirror main.js-filled #greg-date into the Today card. */
+(function(){
+  function sync(){
+    var a = document.getElementById('greg-date'), b = document.getElementById('greg-date-2');
+    if (a && b) b.textContent = a.textContent;
+  }
+  setInterval(sync, 1000); sync();
+})();
+var L5 = {
+en: {todayH:"Today",convH:"Hijri Converter",jantriH:"Hijri Jantri — Monthly Calendar",sunniH:"Sunni Jantri"},
+ur: {todayH:"آج",convH:"ہجری کنورٹر",jantriH:"ہجری جنتری — ماہانہ کیلنڈر",sunniH:"سنی جنتری"},
+ro: {todayH:"Today",convH:"Hijri Converter",jantriH:"Hijri Jantri — Monthly Calendar",sunniH:"Sunni Jantri"},
+ar: {todayH:"اليوم",convH:"محول هجري",jantriH:"التقويم الهجري — التقويم الشهري",sunniH:"التقويم السني"},
+hi: {todayH:"आज",convH:"हिजरी कन्वर्टर",jantriH:"हिजरी जंत्री — मासिक कैलेंडर",sunniH:"सुन्नी जंत्री"}
+};
+function setL5(lang){
+  var d = L5[lang] || L5.ro;
+  document.querySelectorAll('[data-k]').forEach(function(el){ var k = el.getAttribute('data-k'); if (d[k]) el.textContent = d[k]; });
+  document.documentElement.lang = lang === 'ur' ? 'ur' : lang === 'ar' ? 'ar' : lang === 'hi' ? 'hi' : 'en';
+  document.documentElement.dir = (lang === 'ur' || lang === 'ar') ? 'rtl' : 'ltr';
+  document.body.style.fontFamily = lang === 'hi' ? "'Noto Sans Devanagari',Arial,sans-serif" : lang === 'ur' ? "'Noto Nastaliq Urdu',Arial,sans-serif" : lang === 'ar' ? "Amiri,Arial,sans-serif" : "";
+  document.querySelectorAll('[data-l5]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-l5') === lang); });
+}
+document.querySelectorAll('[data-l5]').forEach(function(b){ b.addEventListener('click', function(){ setL5(b.getAttribute('data-l5')); }); });
+setL5('ro');
+</script>
+</body>
+</html>
