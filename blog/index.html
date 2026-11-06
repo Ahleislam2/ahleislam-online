@@ -9,26 +9,38 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+<style>
+body{background:#fff;font-family:Arial,Helvetica,sans-serif}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#000}
+.eyebrow{color:#FF6C00}
+article h2 a{color:#000;text-decoration:none}
+article h2 a:hover{color:#FF6C00}
+main a{color:#FF6C00}
+</style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <div class="brand-row">
-      <div class="brand">
-        <img class="brand-logo" src="../assets/logo.png" alt="Ahl-e-Islam — ahleislam.online logo">
-        <p class="brand-tag">Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
-      </div>
-      <nav class="nav" aria-label="Sections">
-        <a href="/namaz">Namaz</a>
-        <a href="/islamic-calendar">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak">Quran Pak</a>
-        
-      </nav>
-    </div>
-  </div>
-</header>
+<div class="strip"><div class="wrap">
+<span class="date" id="greg-date">…</span>
+<span class="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+
+</div></div>
+<div class="masthead"><div class="wrap">
+<a class="brand" href="/"><img src="../assets/logo.png" alt="Ahl-e-Islam"></a>
+<div class="adslot">Ahl-e-Islam — ahleislam.online</div>
+</div></div>
+<nav class="black"><div class="wrap">
+<a href="/">⌂ Home</a>
+<a href="/today">Today</a>
+<a href="/quran-pak">Quran Pak</a>
+<a href="/islamic-games/">Quiz</a>
+<a class="home" href="/blog/">Blog</a>
+<a href="/islamic-images/">Images</a>
+<a href="/magazine/">Magazine</a>
+<a class="dl" href="/magazine/">⬇ Download Magazine</a>
+</div></nav>
+<div class="crumb"><div class="wrap">
+<b>Home / Blog</b>
+</div></div>
 <main class="wrap">
   <section>
     <span class="eyebrow">Blog</span>
@@ -43,31 +55,7 @@
     </article>
   </section>
 </main>
-<footer>
-  <div class="wrap foot-grid">
-    <div>
-      <h3>Ahl-e-Islam</h3>
-      <p>Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. Quran Arabic text comes from the Tanzil project (CC-BY 3.0, text unchanged, with credit and link). Translations are public-domain works, credited by translator name. No account needed to use the tools.</p>
-    </div>
-    <div>
-      <h3>Sections</h3>
-      <nav aria-label="Footer sections">
-        <a href="/namaz">Namaz</a>
-        <a href="/islamic-calendar">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak">Quran Pak</a>
-        
-      </nav>
-    </div>
-    <div>
-      <h3>Method &amp; honesty</h3>
-      <p>Namaz times are calculated on-page (Karachi method, 18°/18°). Hijri dates are tabular — the local moon-sighting date can differ by about 1 day. Hadith are published only with book, number and grade.</p>
-    </div>
-  </div>
-  <div class="wrap foot-bottom">
-    <p>© 2026 Ahl-e-Islam — ahleislam.online</p>
-  </div>
-</footer>
+<footer>© 2026 Ahl-e-Islam — ahleislam.online</footer>
+<script>document.getElementById('greg-date').textContent = new Date().toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'});</script>
 </body>
 </html>
