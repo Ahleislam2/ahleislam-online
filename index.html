@@ -1,189 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ahl-e-Islam — Namaz Timings, Zakat Calculator, Hijri Converter, Surahs, Hadith</title>
-<meta name="description" content="Ahl-e-Islam: city-wise namaz timings for Pakistan, zakat calculator with tola nisab, Hijri date converter, short Surahs, Hadith and Khatam Sharif — authentic references, one clean Islamic site.">
-<link rel="canonical" href="https://ahleislam.online/">
-<meta property="og:title" content="Ahl-e-Islam — Namaz Timings, Zakat, Hijri, Quran, Hadith">
-<meta property="og:description" content="City-wise namaz timings, zakat calculator, Hijri converter, short Surahs and Hadith — authentic references, one clean Islamic site.">
-<meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Inter:wght@400;500;600;700&family=Lora:wght@500;600;700&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahl-e-Islam — Deen Seekhna, Ab Aasan</title>
+<meta name="description" content="Ahl-e-Islam — Namaz timings, Hijri date, Quran Pak, Quiz, Blog, Images aur Magazine. Ahl-e-Sunnat wal Jamaat.">
+<link rel="icon" href="favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#000}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif}
+.strip{background:#F9F9F9;font-size:13px}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px;flex-wrap:wrap}
+.strip .date{font-weight:700;text-transform:uppercase}
+.strip .ar{font-family:Amiri,serif;font-size:1.05rem}
+.langs{display:flex;gap:6px;flex-wrap:wrap}
+.langs button{border:1px solid #ddd;background:#fff;border-radius:4px;padding:6px 10px;cursor:pointer;font-weight:600}
+.langs button.active{background:#FF6C00;border-color:#FF6C00;color:#fff}
+.masthead{background:#fff}
+.masthead .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;gap:16px}
+.brand img{height:72px;display:block}
+.adslot{width:375px;height:90px;background:#1E1E1E;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+nav.black{background:#1E1E1E}
+nav.black .wrap{display:flex;align-items:center;padding:0 20px;flex-wrap:wrap}
+nav.black a{color:#fff;text-decoration:none;font-size:16px;padding:16px 18px;display:inline-block}
+nav.black a.home{background:#FF6C00}
+nav.black a.dl{background:#CFD747;color:#fff;margin-left:auto}
+.crumb{background:#FF6C00;color:#fff}
+.crumb .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;gap:14px}
+.crumb b{font-size:15px}
+.crumb input{width:100%;max-width:600px;height:35px;border:none;border-radius:999px;padding:0 18px;font-size:14px;outline:none;font-family:Arial,Helvetica,sans-serif}
+.ticker{border:1px solid #ddd;display:flex;margin:16px 0}
+.ticker .lbl{background:#FF6C00;color:#fff;font-weight:700;text-align:center;padding:12px;width:300px;flex:none}
+.ticker .items{padding:12px;white-space:nowrap;overflow:hidden}
+.ticker a{color:#000;text-decoration:none;margin-right:26px}
+.collage{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:5px;margin:10px 0}
+.collage img{width:100%;height:100%;object-fit:cover;display:block}
+.collage .tall{grid-row:span 2}
+.main2{display:grid;grid-template-columns:2fr 1fr;gap:30px;padding:26px 0 40px}
+h2.sec-h{font-size:28px;text-transform:uppercase;border-bottom:1px solid #E5E5E5;padding-bottom:10px;margin:0 0 20px}
+.today-card{border:1px solid #E5E5E5;padding:20px;margin-bottom:20px}
+.today-card h3{margin:0 0 8px;font-size:20px}
+.hijri-big{font-size:1.4rem;font-weight:700}
+.greg{color:#555;margin-top:4px}
+.next-name{font-size:1.5rem;font-weight:700}
+.countdown{font-size:1.6rem;font-weight:700;color:#FF6C00}
+.progress{height:8px;background:#eee;margin:12px 0;overflow:hidden}
+.progress .bar{height:100%;background:#FF6C00;width:0}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.time-box{border:1px solid #E5E5E5;padding:12px;text-align:center}
+.time-box b{display:block;font-size:1.05rem}
+.time-box span{color:#555;font-size:.9rem}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+.controls select{padding:9px 12px;border:1px solid #ddd;font-size:15px;font-family:Arial,Helvetica,sans-serif}
+.conv-box{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.conv-box input{padding:9px 12px;border:1px solid #ddd;font-size:15px}
+.conv-box button{background:#FF6C00;color:#fff;border:none;padding:10px 18px;font-weight:700;cursor:pointer}
+.btn-teal{background:#00A9B5;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.btn-orange{background:#FF6C00;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.acard{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.acard img{width:100%;display:block}
+.acard .b{padding:16px;text-align:center}
+.acard h3{margin:0 0 8px;font-size:18px}
+.acard p{font-size:15px;line-height:1.6;margin:0 0 14px}
+.social{display:grid;gap:10px;margin-bottom:28px}
+.social a{color:#fff;text-decoration:none;font-weight:700;text-transform:uppercase;text-align:center;padding:13px;font-size:15px}
+.fb{background:#3B5998}.tw{background:#1DA1F2}.gm{background:#DD4B39}
+.glance{display:grid;gap:14px}
+.glance a{display:flex;gap:12px;text-decoration:none;color:#000}
+.glance img{width:90px;height:90px;object-fit:cover;flex:none}
+.glance .cat{font-weight:700;text-decoration:underline;font-size:17px}
+.glance .t{font-size:17px}
+.videos{background:#F2F2F2;padding:34px 0}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vthumb{position:relative}
+.vthumb img{width:100%;display:block;border-radius:0 0 15px 15px}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#FF6C00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px}
+.vgrid h3{font-size:18px;margin:10px 0 0}
+.books{padding:34px 0}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.bgrid a{text-decoration:none;color:#000}
+.bgrid img{width:180px;height:270px;object-fit:cover}
+.bgrid h3{font-size:18px;margin:12px 0 0}
+footer{background:#1E1E1E;color:#fff;text-align:center;padding:14px 20px;font-size:.9rem}
+@media(max-width:800px){.main2{grid-template-columns:1fr}.cards2,.vgrid,.bgrid{grid-template-columns:1fr 1fr}.collage{grid-template-columns:1fr 1fr}.adslot{display:none}}
+@media(max-width:520px){.cards2,.vgrid,.bgrid{grid-template-columns:1fr}.times{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <div class="brand-row">
-      <div class="brand">
-        <img class="brand-logo" src="assets/logo.png" alt="Ahl-e-Islam — ahleislam.online logo">
-        <p class="brand-tag" data-t="brandTag">Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
-        <h1 class="sr-only">Ahl-e-Islam — Namaz Timings, Zakat Calculator, Hijri Converter, Surahs, Hadith</h1>
-      </div>
-      <nav class="nav" aria-label="Sections">
-        <a href="/namaz" data-t="navNamaz">Namaz</a>
-        <a href="/islamic-calendar" data-t="navHijri">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak" data-t="navSurahs">Quran Pak</a>
-        
-      </nav>
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button id="lang-en" class="active" type="button">English</button>
-        <button id="lang-ur" type="button">اردو</button>
-      </div>
-    </div>
-    <div class="search-box">
-      <input id="site-search" type="search" data-t="searchPh" placeholder="Search the site — try “Khatam Sharif”, “Zakat”, “Lahore namaz”… " aria-label="Search the site">
-      <div class="suggest" id="suggest"></div>
-    </div>
-  </div>
-</header>
-
-<main class="wrap">
-  <!-- AAJ — answer on top (Islamful pattern: jawab sab se upar) -->
-  <section class="today" aria-label="Today">
-    <div class="today-date">
-      <span class="eyebrow" data-t="todayLabel">Today’s date</span>
-      <div class="hijri-big" id="hijri-date">…</div>
-      <div class="greg" id="greg-date">…</div>
-      <span class="pill" data-t="hijriNote">Hijri date computed (tabular) — local moon-sighting date can differ by about 1 day</span>
-    </div>
-    <!-- Next-prayer hero card (deen.pk pattern: dark card, countdown, progress) -->
-    <div class="next-card">
-      <span class="eyebrow light"><span data-t="nextLabel">Next prayer</span> • <span id="hero-city">Karachi</span></span>
-      <div class="next-row">
-        <div>
-          <div class="next-name" id="next-name">…</div>
-          <div class="next-time" id="next-time">…</div>
-        </div>
-        <div class="countdown" id="countdown">--:--:--</div>
-      </div>
-      <div class="progress"><div class="bar" id="progress-bar"></div></div>
-      <div class="sehri-iftar"><span data-t="sehri">Sehri</span>: <span id="sehri-time">…</span> &nbsp;•&nbsp; <span data-t="iftar">Iftar</span>: <span id="iftar-time">…</span></div>
-      <a class="hero-btn" href="/quran-pak" data-t="quranBtn">Read the Quran — all 114 Surahs</a>
-    </div>
-  </section>
-
-  <section class="timings" id="timings">
-    <span class="eyebrow" data-t="navNamaz">Namaz</span>
-    <h2><span data-t="timingsTitle">Today's Namaz Timings</span> — <span id="city-name">Karachi</span></h2>
-    <p class="sub" data-t="timingsSub">Aaj ki namaz ke auqaat — select your city. Asr method can be switched Hanafi / Shafi.</p>
-    <div class="controls">
-      <select id="city" aria-label="Select city"></select>
-      <button id="asr-hanafi" class="active" type="button" data-t="asrHanafi">Asr: Hanafi</button>
-      <button id="asr-shafi" type="button" data-t="asrShafi">Asr: Shafi</button>
-    </div>
-    <div class="times" id="times"></div>
-    <p class="method" data-t="method">Method: University of Islamic Sciences, Karachi — Fajr &amp; Isha at 18°. Times are calculated on this page (no external API), so they stay free and fast. Small differences from your local masjid timetable (1–3 minutes) are normal — method and rounding differ.</p>
-  </section>
-
-  <!-- Hijri converter mini (HijriCal pattern: one card, oversized result, honest note) -->
-  <section class="converter" id="hijri-tool">
-    <span class="eyebrow" data-t="navHijri">Islamic Calendar</span>
-    <h2 data-t="convTitle">Hijri Date Converter</h2>
-    <p class="sub" data-t="convSub">Kisi bhi Gregorian tareekh ka Hijri date nikalein — result upar, wazahat neeche.</p>
-    <div class="conv-box">
-      <label for="conv-date" data-t="convLabel">Gregorian date</label>
-      <input id="conv-date" type="date">
-      <button id="conv-btn" type="button" data-t="convBtn">Convert</button>
-      <div class="conv-result" id="conv-result">—</div>
-      <p class="note" data-t="convNote">Tabular (calculated) Hijri date. Pakistan me elan-shuda (moon-sighting) date 1 din aage-peeche ho sakti hai — is liye har page par ye note saaf likha hoga.</p>
-    </div>
-  </section>
-
-  <!-- Featured hadith (daily-feature pattern: repeat-visit reason) -->
-  <section class="hadith-feat">
-    <span class="eyebrow" data-t="hadithLabel">Hadith of the Day</span>
-    <p class="arabic">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ</p>
-    <p class="hadith-text" data-t="hadithText">“Actions are but by intentions.” — har amal ka daromadar niyyat par hai.</p>
-    <p class="ref" data-t="hadithRef">Sahih al-Bukhari 1 • Daily rotation — a new Hadith every day, with book + number.</p>
-  </section>
-
-  <section style="max-width:720px;margin:26px auto;background:#0F5132;border:3px solid #C9A24B;border-radius:16px;padding:20px;text-align:center;color:#FBF7EE;"> <p style="color:#C9A24B;font-weight:700;letter-spacing:1px;font-size:13px;margin:0 0 6px;">AHL-E-ISLAM • ISLAMIC QUIZ</p> <p style="font-size:20px;font-weight:700;margin:8px 0 14px;">Quran ke kitne pare hain?</p> <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"> <a href="https://www.youtube.com/@AhleIslamonline" target="_blank" rel="noopener" style="display:block;background:#FBF7EE;color:#1F2A24;font-weight:700;text-decoration:none;padding:12px 6px;border-radius:12px;border:2px solid #C9A24B;">A: 28</a> <a href="https://www.youtube.com/@AhleIslamonline" target="_blank" rel="noopener" style="display:block;background:#FBF7EE;color:#1F2A24;font-weight:700;text-decoration:none;padding:12px 6px;border-radius:12px;border:2px solid #C9A24B;">B: 30</a> <a href="https://www.youtube.com/@AhleIslamonline" target="_blank" rel="noopener" style="display:block;background:#FBF7EE;color:#1F2A24;font-weight:700;text-decoration:none;padding:12px 6px;border-radius:12px;border:2px solid #C9A24B;">C: 32</a> <a href="https://www.youtube.com/@AhleIslamonline" target="_blank" rel="noopener" style="display:block;background:#FBF7EE;color:#1F2A24;font-weight:700;text-decoration:none;padding:12px 6px;border-radius:12px;border:2px solid #C9A24B;">D: 33</a> </div> <p style="font-size:13px;opacity:.9;margin:14px 0 0;">Kisi bhi option par click karein — sahi jawab wali video hamare YouTube channel par khul jayegi. <a href="https://www.youtube.com/@AhleIslamonline" target="_blank" rel="noopener" style="color:#C9A24B;font-weight:700;">Subscribe — @AhleIslamonline</a></p> </section>
-  <!-- Sections -->
-  <section class="grid-wrap">
-    <span class="eyebrow" data-t="secEyebrow">Explore the sections</span>
-    <div class="grid">
-    
-    <div class="card" id="sec-hijri">
-      <h3 data-t="cardHijriT">Hijri Converter</h3>
-      <p data-t="cardHijriD">Gregorian ↔ Hijri, poore saal ki table, notable dates — Pakistan local basis ke sath.</p>
-      <p class="edge" data-t="cardHijriE">Ruet-e-Hilal local date, with the ±1 day note stated clearly.</p>
-      <span class="tag" data-t="cardHijriTag">Mini tool upar live hai</span>
-    </div>
-    <div class="card" id="sec-surahs">
-      <h3 data-t="cardSurahT">Short Surahs + 4 Qul</h3>
-      <p data-t="cardSurahD">All small Surahs — Arabic (asli text, image nahi) + Urdu + English, har Surah ka apna page.</p>
-      <p class="edge" data-t="cardSurahE">Urdu + English translations beside the original Arabic text.</p>
-      <span class="tag" data-t="cardSurahTag">Library</span>
-    </div>
-    
-    
-    <a class="card" id="sec-games" href="/islamic-games/" style="text-decoration:none;color:inherit">
-      <h3>Islamic Games</h3>
-      <p>Islamic Quiz — har roz 10 naye sawal, khelein aur seekhein.</p>
-      <span class="tag">Play</span>
-    </a>
-    <div class="card">
-      <h3 data-t="cardRamT">Ramadan 2027</h3>
-      <p data-t="cardRamD">Sehr &amp; Iftar timetables for every city — publishing before Ramadan 2027, in sha Allah.</p>
-      <p class="edge" data-t="cardRamE">Har sheher ka alag page + monthly table — chhote sheher pehle (Samundri, Gojra, Toba Tek Singh).</p>
-      <span class="tag" data-t="cardRamTag">January 2027</span>
-    </div>
-    </div>
-  </section>
-
-  <!-- Ramadan 2027 banner -->
-  <section class="ramadan">
-    <span class="eyebrow light" data-t="ramBanEyebrow">Ramadan 2027</span>
-    <h2 data-t="ramBanT">Ramadan 2027 — Sehr &amp; Iftar timetables</h2>
-    <p data-t="ramBanD">Sehr and Iftar timetables for every city, publishing in January 2027 — before Ramadan begins, in sha Allah.</p>
-    <p class="ram-note" data-t="ramBanNote">1 Ramadan 1448 is expected around 8 February 2027, subject to moon sighting. Timings use the Karachi method (18°/18°).</p>
-  </section>
-
-  <!-- Trust strip (PakHisaab + HijriCal pattern: method + source + date, saaf) -->
-  <section class="trust">
-    <div><strong data-t="trust1T">Karachi method</strong><span data-t="trust1D">18° / 18°, Hanafi + Shafi Asr</span></div>
-    <div><strong data-t="trust2T">Quran text</strong><span data-t="trust2D">Tanzil (CC-BY 3.0), unchanged</span></div>
-    <div><strong data-t="trust3T">Translations</strong><span data-t="trust3D">Public-domain, credited by name</span></div>
-    <div><strong data-t="trust4T">Honest dates</strong><span data-t="trust4D">Hijri ±1 day note on every page</span></div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap foot-grid">
-    <div>
-      <h3>Ahl-e-Islam</h3>
-      <p data-t="footer">Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. Quran Arabic text on future pages comes from the Tanzil project (CC-BY 3.0, text unchanged, with credit and link). Translations are public-domain works, credited by translator name. No account needed to use the tools.</p>
-    </div>
-    <div>
-      <h3 data-t="footSections">Sections</h3>
-      <nav aria-label="Footer sections">
-        <a href="/namaz" data-t="navNamaz">Namaz</a>
-        <a href="/islamic-calendar" data-t="navHijri">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak" data-t="navSurahs">Quran Pak</a>
-        
-      </nav>
-    </div>
-    <div>
-      <h3 data-t="footTrust">Method &amp; honesty</h3>
-      <p data-t="footTrustD">Namaz times are calculated on-page (Karachi method, 18°/18°). Hijri dates are tabular — the local moon-sighting date can differ by about 1 day. Hadith are published only with book, number and grade.</p>
-    </div>
-  </div>
-  <div class="wrap foot-bottom">
-    <p>© 2026 Ahl-e-Islam — ahleislam.online</p>
-  </div>
-</footer>
-
+<div class="strip"><div class="wrap">
+<span class="date" id="greg-date">Thursday, November 5, 2026</span>
+<span class="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+<span class="langs" role="group" aria-label="Language">
+<button type="button" data-l5="en">English (US)</button>
+<button type="button" data-l5="ur">اردو (PK)</button>
+<button type="button" data-l5="ro" class="active">Roman Urdu</button>
+<button type="button" data-l5="ar">العربية (SA)</button>
+<button type="button" data-l5="hi">हिन्दी (IN)</button>
+</span>
+</div></div>
+<div class="masthead"><div class="wrap">
+<a class="brand" href="/"><img src="assets/logo.png" alt="Ahl-e-Islam"></a>
+<div class="adslot">Ahl-e-Islam — ahleislam.online</div>
+</div></div>
+<nav class="black"><div class="wrap">
+<a class="home" href="/">⌂ Home</a>
+<a href="/today">Today</a>
+<a href="/quran-pak">Quran Pak</a>
+<a href="/islamic-games/">Quiz</a>
+<a href="/blog/">Blog</a>
+<a href="/islamic-images/">Images</a>
+<a href="/magazine/">Magazine</a>
+<a class="dl" href="/magazine/">⬇ Download Magazine</a>
+</div></nav>
+<div class="crumb"><div class="wrap">
+<b>Home</b>
+<input id="site-search" type="search" placeholder="Search..." aria-label="Search site"><span id="suggest"></span>
+</div></div>
+<div class="wrap">
+<div class="ticker">
+<div class="lbl">Today</div>
+<div class="items"><a href="/today"><span id="hijri-date">…</span></a><a href="/today">Agli namaz: <b id="next-name">…</b> <span id="next-time">…</span></a></div>
+</div>
+<div class="collage">
+<img src="assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt="Quran on rehal">
+<img class="tall" src="assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt="Mosque at dawn">
+<img src="assets/images/media-generation-gallery-ramadan-lanterns-0-98221291-38d9-4cef-a833-bc86548c0f9e.webp" alt="Ramadan lanterns">
+<img src="assets/images/media-generation-gallery-geometric-pattern-0-39696b8d-ac1c-41e5-bc25-13a01cfc190a.webp" alt="Islamic pattern">
+</div>
+<div class="main2">
+<div>
+<h2 class="sec-h" data-k="todayH">Today</h2>
+<div class="today-card">
+<h3>Today's Date</h3>
+<div class="hijri-big" id="hijri-date-2">…</div>
+<p style="color:#555;font-size:.9rem">Hijri date computed (tabular) — local moon-sighting date can differ by about 1 day.</p>
+<h3 style="margin-top:18px">Next Prayer • <span id="hero-city">Karachi</span></h3>
+<div class="next-name" id="next-name-2">…</div>
+<div id="next-time-2">…</div>
+<span id="countdown" style="display:none"></span><div class="countdown" id="countdown-2">--:--:--</div>
+<div class="progress"><div class="bar" id="progress-bar"></div></div>
+<div>Sehri: <b id="sehri-time">…</b> &nbsp;•&nbsp; Iftar: <b id="iftar-time">…</b></div>
+<p style="margin-top:14px"><a class="btn-orange" href="/today">Poori Timetable Dekhein →</a></p>
+</div>
+<div class="today-card">
+<h3>Today's Namaz Timings — <span id="city-name">Karachi</span></h3>
+<div class="controls">
+<select id="city" aria-label="Select city"></select>
+<button id="asr-hanafi" class="btn-orange" type="button">Asr: Hanafi</button>
+<button id="asr-shafi" type="button" style="display:none">Asr: Shafi</button>
+</div>
+<div class="times" id="times"></div>
+<p style="color:#555;font-size:.9rem">Method: University of Islamic Sciences, Karachi — Fajr &amp; Isha at 18°. Times are calculated on this page (no external API). Small differences from your local masjid timetable (1–3 minutes) are normal.</p>
+<div class="conv-box">
+<label for="conv-date"><b>Hijri Date Converter</b></label>
+<input id="conv-date" type="date">
+<button id="conv-btn" type="button">Convert</button>
+<span id="conv-result">—</span>
+</div>
+</div>
+<h2 class="sec-h" data-k="blogH">Latest Blog — Seedhi Zaban Me</h2>
+<div class="cards2">
+<article class="acard">
+<img src="assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt="Quran on rehal">
+<div class="b"><h3>Zakat Kab Farz Hoti Hai?</h3><p>Nisab, 2.5% sharah aur hisab — 5 shartein, aik misaal, aam sawalon ke jawab.</p><a class="btn-teal" href="/blog/zakat-kab-farz-hoti-hai/">Read Article</a></div>
+</article>
+<article class="acard">
+<img src="assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt="Mosque at dawn">
+<div class="b"><h3>Ahl-e-Islam Magazine</h3><p>Har mahine naya issue — Quran, Seerah, Fiqh aur Akhlaq par articles.</p><a class="btn-teal" href="/magazine/">Read Article</a></div>
+</article>
+</div>
+</div>
+<aside>
+<h2 class="sec-h">Follow Us</h2>
+<div class="social">
+<a class="fb" href="https://www.youtube.com/@AhleIslamonline">YouTube</a>
+<a class="tw" href="https://ahleislam.online">Website</a>
+<a class="gm" href="mailto:hina400900@gmail.com">Email</a>
+</div>
+<h2 class="sec-h">Magazine in a Glance</h2>
+<div class="glance">
+<a href="/blog/zakat-kab-farz-hoti-hai/"><img src="assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt=""><span><span class="cat">Fiqh</span><br><span class="t">Zakat Kab Farz Hoti Hai?</span></span></a>
+<a href="/quran-pak"><img src="assets/images/media-generation-gallery-geometric-pattern-0-39696b8d-ac1c-41e5-bc25-13a01cfc190a.webp" alt=""><span><span class="cat">Quran</span><br><span class="t">Quran Pak — Surah &amp; Para</span></span></a>
+<a href="/today"><img src="assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt=""><span><span class="cat">Namaz</span><br><span class="t">Today — Namaz Timings</span></span></a>
+</div>
+<h2 class="sec-h" style="margin-top:28px">Hadith of the Day</h2>
+<div class="today-card" style="text-align:center">
+<p style="font-family:Amiri,serif;font-size:1.5rem;color:#157784;margin:8px 0">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ</p>
+<p>“Actions are but by intentions.” — har amal ka daromadar niyyat par hai.</p>
+<p style="color:#555;font-size:.9rem">Sahih al-Bukhari 1</p>
+<p><a href="/sahih-bukhari/">Sahih Bukhari Sharif (Arabic) →</a></p>
+</div>
+</aside>
+</div>
+</div>
+<section class="videos"><div class="wrap">
+<h2 class="sec-h">Watch More Videos</h2>
+<div class="vgrid">
+<div><div class="vthumb"><img src="assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt=""><span class="play">▶</span></div><h3>Quran Quiz Shorts</h3></div>
+<div><div class="vthumb"><img src="assets/images/media-generation-gallery-ramadan-lanterns-0-98221291-38d9-4cef-a833-bc86548c0f9e.webp" alt=""><span class="play">▶</span></div><h3>Ramadan Special</h3></div>
+<div><div class="vthumb"><img src="assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt=""><span class="play">▶</span></div><h3>Masjid at Dawn</h3></div>
+</div>
+</div></section>
+<section class="books"><div class="wrap">
+<h2 class="sec-h">Quran Pak — Parhein aur Seekhein</h2>
+<div class="bgrid">
+<a href="/quran-surah-1/"><img src="assets/images/media-generation-gallery-quran-rehal-0-7093ffb5-f3d7-4ff1-b776-9129c3e27493.webp" alt=""><h3>Surah Al-Fatiha</h3></a>
+<a href="/quran-surah-36/"><img src="assets/images/media-generation-gallery-geometric-pattern-0-39696b8d-ac1c-41e5-bc25-13a01cfc190a.webp" alt=""><h3>Surah Yasin</h3></a>
+<a href="/quran-surah-112/"><img src="assets/images/media-generation-gallery-ramadan-lanterns-0-98221291-38d9-4cef-a833-bc86548c0f9e.webp" alt=""><h3>Surah Al-Ikhlas</h3></a>
+<a href="/quran-pak"><img src="assets/images/media-generation-ahleislam-hero-banner-0-b99aac52-c396-4b5d-9ae2-1fa6c2c6bf05.webp" alt=""><h3>Tamam 114 Surahs →</h3></a>
+</div>
+</div></section>
+<footer>© 2026 Ahl-e-Islam — ahleislam.online</footer>
 <script src="assets/js/praytimes.js"></script>
 <script src="assets/js/hijri.js"></script>
 <script src="assets/js/lang.js"></script>
 <script src="assets/js/main.js"></script>
+<script>
+/* Mirror main.js-filled IDs that appear twice on this page (ticker + Today card). */
+(function(){
+  function sync(){
+    var pairs = [['hijri-date','hijri-date-2'],['next-name','next-name-2'],['next-time','next-time-2'],['countdown','countdown-2']];
+    pairs.forEach(function(p){
+      var a = document.getElementById(p[0]), b = document.getElementById(p[1]);
+      if (a && b) b.textContent = a.textContent;
+    });
+  }
+  setInterval(sync, 1000); sync();
+})();
+var L5 = {
+en: {todayH:"Today",blogH:"Latest Blog — In Simple Words"},
+ur: {todayH:"آج",blogH:"تازہ بلاگ — سیدھی زبان میں"},
+ro: {todayH:"Today",blogH:"Latest Blog — Seedhi Zaban Me"},
+ar: {todayH:"اليوم",blogH:"أحدث المقالات — بلغة بسيطة"},
+hi: {todayH:"आज",blogH:"ताज़ा ब्लॉग — सीधी ज़बान में"}
+};
+function setL5(lang){
+  var d = L5[lang] || L5.ro;
+  document.querySelectorAll('[data-k]').forEach(function(el){ var k = el.getAttribute('data-k'); if (d[k]) el.textContent = d[k]; });
+  document.documentElement.lang = lang === 'ur' ? 'ur' : lang === 'ar' ? 'ar' : lang === 'hi' ? 'hi' : 'en';
+  document.documentElement.dir = (lang === 'ur' || lang === 'ar') ? 'rtl' : 'ltr';
+  document.body.style.fontFamily = lang === 'hi' ? "'Noto Sans Devanagari',Arial,sans-serif" : lang === 'ur' ? "'Noto Nastaliq Urdu',Arial,sans-serif" : lang === 'ar' ? "Amiri,Arial,sans-serif" : "";
+  document.querySelectorAll('[data-l5]').forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-l5') === lang); });
+}
+document.querySelectorAll('[data-l5]').forEach(function(b){ b.addEventListener('click', function(){ setL5(b.getAttribute('data-l5')); }); });
+setL5('ro');
+</script>
 </body>
 </html>
