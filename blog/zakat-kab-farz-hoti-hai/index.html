@@ -11,37 +11,122 @@
 <link rel="stylesheet" href="../../assets/css/style.css">
 <style>
 .langbar{display:flex;gap:8px;margin:18px 0;flex-wrap:wrap}
-.langbar button{padding:9px 18px;border:2px solid #0F5132;border-radius:20px;background:#fff;color:#0F5132;font-weight:600;cursor:pointer;font-family:inherit}
-.langbar button.active{background:#0F5132;color:#fff}
+.langbar button{padding:9px 18px;border:2px solid #FF6C00;border-radius:20px;background:#fff;color:#000;font-weight:600;cursor:pointer;font-family:inherit}
+.langbar button.active{background:#FF6C00;color:#fff}
 .lang{display:none}.lang.show{display:block}
 .urdu{font-family:"Noto Nastaliq Urdu","Amiri",serif;direction:rtl;text-align:right;line-height:2}
 .article-card{background:#fff;border:1px solid #e6dcc3;border-radius:12px;padding:20px;margin:16px 0}
-.article-card h2{color:#0F5132;border-bottom:2px solid #C9A24B;padding-bottom:6px}
+.article-card h2{color:#000;border-bottom:2px solid #FF6C00;padding-bottom:6px}
 table{width:100%;border-collapse:collapse;margin:10px 0}
 th,td{border:1px solid #ddd;padding:8px;text-align:left}
-th{background:#0F5132;color:#fff}
-.note{background:#fff8e1;border-left:4px solid #C9A24B;padding:12px 14px;margin:16px 0}
+th{background:#FF6C00;color:#fff}
+.note{background:#fff8e1;border-left:4px solid #FF6C00;padding:12px 14px;margin:16px 0}
+</style>
+<style>
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#fff;color:#000}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif}
+.strip{background:#F9F9F9;font-size:13px}
+.strip .wrap{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;gap:12px;flex-wrap:wrap}
+.strip .date{font-weight:700;text-transform:uppercase}
+.strip .ar{font-family:Amiri,serif;font-size:1.05rem}
+.langs{display:flex;gap:6px;flex-wrap:wrap}
+.langs button{border:1px solid #ddd;background:#fff;border-radius:4px;padding:6px 10px;cursor:pointer;font-weight:600}
+.langs button.active{background:#FF6C00;border-color:#FF6C00;color:#fff}
+.masthead{background:#fff}
+.masthead .wrap{display:flex;justify-content:space-between;align-items:center;padding:22px 20px;gap:16px}
+.brand img{height:72px;display:block}
+.adslot{width:375px;height:90px;background:#1E1E1E;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+nav.black{background:#1E1E1E}
+nav.black .wrap{display:flex;align-items:center;padding:0 20px;flex-wrap:wrap}
+nav.black a{color:#fff;text-decoration:none;font-size:16px;padding:16px 18px;display:inline-block}
+nav.black a.home{background:#FF6C00}
+nav.black a.dl{background:#CFD747;color:#fff;margin-left:auto}
+.crumb{background:#FF6C00;color:#fff}
+.crumb .wrap{display:flex;justify-content:space-between;align-items:center;padding:8px 20px;gap:14px}
+.crumb b{font-size:15px}
+.crumb input{width:100%;max-width:600px;height:35px;border:none;border-radius:999px;padding:0 18px;font-size:14px;outline:none;font-family:Arial,Helvetica,sans-serif}
+.ticker{border:1px solid #ddd;display:flex;margin:16px 0}
+.ticker .lbl{background:#FF6C00;color:#fff;font-weight:700;text-align:center;padding:12px;width:300px;flex:none}
+.ticker .items{padding:12px;white-space:nowrap;overflow:hidden}
+.ticker a{color:#000;text-decoration:none;margin-right:26px}
+.collage{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:5px;margin:10px 0}
+.collage img{width:100%;height:100%;object-fit:cover;display:block}
+.collage .tall{grid-row:span 2}
+.main2{display:grid;grid-template-columns:2fr 1fr;gap:30px;padding:26px 0 40px}
+h2.sec-h{font-size:28px;text-transform:uppercase;border-bottom:1px solid #E5E5E5;padding-bottom:10px;margin:0 0 20px}
+.today-card{border:1px solid #E5E5E5;padding:20px;margin-bottom:20px}
+.today-card h3{margin:0 0 8px;font-size:20px}
+.hijri-big{font-size:1.4rem;font-weight:700}
+.greg{color:#555;margin-top:4px}
+.next-name{font-size:1.5rem;font-weight:700}
+.countdown{font-size:1.6rem;font-weight:700;color:#FF6C00}
+.progress{height:8px;background:#eee;margin:12px 0;overflow:hidden}
+.progress .bar{height:100%;background:#FF6C00;width:0}
+.times{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.time-box{border:1px solid #E5E5E5;padding:12px;text-align:center}
+.time-box b{display:block;font-size:1.05rem}
+.time-box span{color:#555;font-size:.9rem}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+.controls select{padding:9px 12px;border:1px solid #ddd;font-size:15px;font-family:Arial,Helvetica,sans-serif}
+.conv-box{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.conv-box input{padding:9px 12px;border:1px solid #ddd;font-size:15px}
+.conv-box button{background:#FF6C00;color:#fff;border:none;padding:10px 18px;font-weight:700;cursor:pointer}
+.btn-teal{background:#00A9B5;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.btn-orange{background:#FF6C00;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px}
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.acard{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.acard img{width:100%;display:block}
+.acard .b{padding:16px;text-align:center}
+.acard h3{margin:0 0 8px;font-size:18px}
+.acard p{font-size:15px;line-height:1.6;margin:0 0 14px}
+.social{display:grid;gap:10px;margin-bottom:28px}
+.social a{color:#fff;text-decoration:none;font-weight:700;text-transform:uppercase;text-align:center;padding:13px;font-size:15px}
+.fb{background:#3B5998}.tw{background:#1DA1F2}.gm{background:#DD4B39}
+.glance{display:grid;gap:14px}
+.glance a{display:flex;gap:12px;text-decoration:none;color:#000}
+.glance img{width:90px;height:90px;object-fit:cover;flex:none}
+.glance .cat{font-weight:700;text-decoration:underline;font-size:17px}
+.glance .t{font-size:17px}
+.videos{background:#F2F2F2;padding:34px 0}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.vthumb{position:relative}
+.vthumb img{width:100%;display:block;border-radius:0 0 15px 15px}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#FF6C00;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px}
+.vgrid h3{font-size:18px;margin:10px 0 0}
+.books{padding:34px 0}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.bgrid a{text-decoration:none;color:#000}
+.bgrid img{width:180px;height:270px;object-fit:cover}
+.bgrid h3{font-size:18px;margin:12px 0 0}
+footer{background:#1E1E1E;color:#fff;text-align:center;padding:14px 20px;font-size:.9rem}
+@media(max-width:800px){.main2{grid-template-columns:1fr}.cards2,.vgrid,.bgrid{grid-template-columns:1fr 1fr}.collage{grid-template-columns:1fr 1fr}.adslot{display:none}}
+@media(max-width:520px){.cards2,.vgrid,.bgrid{grid-template-columns:1fr}.times{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <div class="brand-row">
-      <div class="brand">
-        <img class="brand-logo" src="../../assets/logo.png" alt="Ahl-e-Islam — ahleislam.online logo">
-        <p class="brand-tag">Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
-      </div>
-      <nav class="nav" aria-label="Sections">
-        <a href="/namaz">Namaz</a>
-        <a href="/islamic-calendar">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak">Quran Pak</a>
-        
-      </nav>
-    </div>
-  </div>
-</header>
+<div class="strip"><div class="wrap">
+<span class="date" id="greg-date">…</span>
+<span class="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+
+</div></div>
+<div class="masthead"><div class="wrap">
+<a class="brand" href="/"><img src="../../assets/logo.png" alt="Ahl-e-Islam"></a>
+<div class="adslot">Ahl-e-Islam — ahleislam.online</div>
+</div></div>
+<nav class="black"><div class="wrap">
+<a href="/">⌂ Home</a>
+<a href="/today">Today</a>
+<a href="/quran-pak">Quran Pak</a>
+<a href="/islamic-games/">Quiz</a>
+<a class="home" href="/blog/">Blog</a>
+<a href="/islamic-images/">Images</a>
+<a href="/magazine/">Magazine</a>
+<a class="dl" href="/magazine/">⬇ Download Magazine</a>
+</div></nav>
+<div class="crumb"><div class="wrap">
+<b>Home / Blog / Zakat Kab Farz Hoti Hai?</b>
+</div></div>
 <main class="wrap">
   <section>
     <span class="eyebrow">Blog</span>
@@ -220,32 +305,7 @@ th{background:#0F5132;color:#fff}
 
 <p style="margin-top:18px">Wapas: <a href="/blog/">Blog</a> • Zakat Calculator • <a href="/">Home</a></p>
 </main>
-<footer>
-  <div class="wrap foot-grid">
-    <div>
-      <h3>Ahl-e-Islam</h3>
-      <p>Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. Quran Arabic text comes from the Tanzil project (CC-BY 3.0, text unchanged, with credit and link). Translations are public-domain works, credited by translator name. No account needed to use the tools.</p>
-    </div>
-    <div>
-      <h3>Sections</h3>
-      <nav aria-label="Footer sections">
-        <a href="/namaz">Namaz</a>
-        <a href="/islamic-calendar">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak">Quran Pak</a>
-        
-      </nav>
-    </div>
-    <div>
-      <h3>Method &amp; honesty</h3>
-      <p>Namaz times are calculated on-page (Karachi method, 18°/18°). Hijri dates are tabular — the local moon-sighting date can differ by about 1 day. Hadith are published only with book, number and grade.</p>
-    </div>
-  </div>
-  <div class="wrap foot-bottom">
-    <p>© 2026 Ahl-e-Islam — ahleislam.online</p>
-  </div>
-</footer>
+<footer>© 2026 Ahl-e-Islam — ahleislam.online</footer>
 <script>
 function showLang(k){
   document.querySelectorAll('.lang').forEach(function(e){e.classList.remove('show')});
@@ -254,5 +314,6 @@ function showLang(k){
   document.getElementById('b-'+k).classList.add('active');
 }
 </script>
+<script>document.getElementById('greg-date').textContent = new Date().toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'});</script>
 </body>
 </html>
