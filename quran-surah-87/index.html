@@ -12,7 +12,7 @@
 @media(min-width:768px){:root{--ar:36px}}
 [data-theme="dark"]{--ink:#F2F2F2;--muted:#B0B0B0;--line:#333;--panel:#1E1E1E;--page:#141414;--frame-bg:#1E1E1E}
 *{box-sizing:border-box}
-body{margin:0;background-color:#0B0E1A;background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('../assets/images/masjid-dark-wallpaper-quran-pak.jpg');background-position:center center;background-size:cover;background-attachment:fixed;background-repeat:no-repeat;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+body{margin:0;background-color:#0B0E1A;background-image:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('../assets/images/masjid-dark-wallpaper.jpg');background-position:center center;background-size:cover;background-attachment:fixed;background-repeat:no-repeat;color:var(--ink);font-family:Arial,Helvetica,sans-serif}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:8px 16px;flex-wrap:wrap;padding:10px 16px;background:#1E1E1E;color:#fff;position:sticky;top:0;z-index:20}
 .brand{color:#fff;text-decoration:none;font-weight:700;font-size:18px}
 .sitenav{display:flex;gap:2px;flex-wrap:wrap;align-items:center}
@@ -45,22 +45,34 @@ body{margin:0;background-color:#0B0E1A;background-image:linear-gradient(rgba(0,0
 .mushaf{background:var(--frame-bg);border:2px solid #FF6C00}
 .mhead{display:flex;justify-content:space-between;gap:8px;background:#FF6C00;color:#fff;font-weight:700;padding:12px 16px;font-size:15px}
 .bismillah{font-family:Amiri,serif;font-size:clamp(30px,7vw,42px);line-height:2;text-align:center;padding:22px 16px 6px;color:var(--ink)}
-.mushaf-ar{font-family:Amiri,serif;font-size:var(--ar);line-height:1.9;text-align:justify;padding:10px 26px 20px;color:var(--ink)}
+.mushaf-ar{font-family:Amiri,serif;font-size:var(--ar);line-height:1.9;text-align:justify;padding:10px 26px 20px;color:var(--ink);background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(1.9em - 1px),rgba(255,108,0,.35) calc(1.9em - 1px),rgba(255,108,0,.35) 1.9em);background-origin:content-box;background-clip:content-box}
 .amark{font-family:Arial,Helvetica,sans-serif;font-size:.55em;font-weight:700;color:var(--ink);white-space:nowrap}
 .orn-div{text-align:center;color:#FF6C00;letter-spacing:8px;padding:4px 0 10px}
 .mfoot{text-align:center;color:var(--muted);font-size:13px;padding:0 16px 16px}
 .chunk.hidden{display:none}
-tr.hidden{display:none}
+.tr-card.hidden{display:none}
 .more{display:block;margin:18px auto;padding:12px 34px;background:#EFEFEF;color:#FF6C00;border:none;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;font-family:Arial,Helvetica,sans-serif}
 .more:hover{background:#FFE8D6}
 .tarjuma h2,.intro h2,.credits h2{font-size:20px;border-bottom:2px solid #FF6C00;padding-bottom:6px;margin:26px 0 12px}
-table.tarjuma{width:100%;border-collapse:collapse}
-.tarjuma td{border-top:1px solid var(--line);padding:10px 8px;vertical-align:top}
-.tarjuma td.n{width:28px;color:#FF6C00;font-weight:700;text-align:center}
-.tarjuma td.ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2}
-.tarjuma td.en{color:var(--ink);line-height:1.7}
-body[data-lang="ur"] td.en{display:none}
-body[data-lang="en"] td.ur{display:none}
+.tr-card{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:16px 18px;margin:0 0 14px}
+.tr-ar{font-family:Amiri,serif;font-size:1.6rem;line-height:2;text-align:center;color:var(--ink)}
+.tr-div{height:2px;background:#FF6C00;width:70%;margin:14px auto 0;border-radius:2px}
+.tr-div.top{margin:0 auto 14px}
+.tr-tabs{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:10px 0 6px}
+.tr-num{color:#FF6C00;font-weight:700;font-size:13px}
+.tr-tabwrap{display:flex;gap:6px}
+.tr-tab{border:1px solid var(--line);background:#EFEFEF;color:#666;border-radius:999px;padding:6px 14px;font-weight:700;cursor:pointer;font-family:Arial,Helvetica,sans-serif}
+.tr-tab.on{background:#FF6C00;border-color:#FF6C00;color:#fff}
+.tr-play{border:none;background:#FF6C00;color:#fff;border-radius:50%;width:34px;height:34px;font-size:14px;line-height:1;cursor:pointer;flex:none}
+.tr-ur{font-family:'Noto Nastaliq Urdu',serif;line-height:2;text-align:right;margin:6px 0 0}
+.tr-en{line-height:1.7;margin:6px 0 0}
+body[data-lang="ur"] .tr-en{display:none}
+body[data-lang="en"] .tr-ur{display:none}
+.side-body audio{width:100%;margin-top:6px}
+.dlpill{display:inline-block;margin-top:12px;background:#FF6C00;color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:10px 18px}
+.au-status{font-size:13px;color:var(--muted);margin-top:6px}
+.au-note{font-size:12px;color:var(--muted);margin-top:8px}
+.side-box.listen{position:static;margin-top:24px}
 .intro,.credits{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:22px 0;line-height:1.8}
 .intro h2,.credits h2{margin-top:0;border:none;padding:0}
 .naas-extra h2{color:var(--ink);border-bottom:2px solid #FF6C00;padding-bottom:6px;margin-top:28px;direction:rtl;text-align:right;font-family:'Noto Nastaliq Urdu',serif;font-size:22px}
@@ -140,27 +152,25 @@ footer a{color:#FF6C00;text-decoration:none}
   </div>
 <section class="tarjuma">
 <h2>Tarjuma — Urdu aur English</h2>
-<table class="tarjuma"><tbody>
-<tr data-chunk="1"><td class="n">1</td><td class="ur" dir="rtl" lang="ur">اپنے رب کے نام کی پاکی بولو جب سے بلند ہے</td><td class="en">Praise the name of thy Lord the Most High,</td></tr>
-<tr data-chunk="1"><td class="n">2</td><td class="ur" dir="rtl" lang="ur">جس نے بناکر ٹھیک کیا</td><td class="en">Who createth, then disposeth;</td></tr>
-<tr data-chunk="1"><td class="n">3</td><td class="ur" dir="rtl" lang="ur">اور جس نے اندازہ پر رکھ کر راہ دی</td><td class="en">Who measureth, then guideth;</td></tr>
-<tr data-chunk="1"><td class="n">4</td><td class="ur" dir="rtl" lang="ur">اور جس نے چارہ نکالا،</td><td class="en">Who bringeth forth the pasturage,</td></tr>
-<tr data-chunk="1"><td class="n">5</td><td class="ur" dir="rtl" lang="ur">پھر اسے خشک سیاہ کردیا،</td><td class="en">Then turneth it to russet stubble.</td></tr>
-<tr data-chunk="1"><td class="n">6</td><td class="ur" dir="rtl" lang="ur">اب ہم تمہیں پڑھائیں گے کہ تم نہ بھولو گے</td><td class="en">We shall make thee read (O Muhammad) so that thou shalt not forget</td></tr>
-<tr data-chunk="1"><td class="n">7</td><td class="ur" dir="rtl" lang="ur">مگر جو اللہ چاہے بیشک وہ جانتا ہے ہر کھلے اور چھپے کو،</td><td class="en">Save that which Allah willeth. Lo! He knoweth the disclosed and that which still is hidden;</td></tr>
-<tr data-chunk="1"><td class="n">8</td><td class="ur" dir="rtl" lang="ur">اور ہم تمہارے لیے آسانی کا سامان کردیں گے</td><td class="en">And We shall ease thy way unto the state of ease.</td></tr>
-<tr data-chunk="1"><td class="n">9</td><td class="ur" dir="rtl" lang="ur">تو تم نصیحت فرماؤ اگر نصیحت کام دے</td><td class="en">Therefor remind (men), for of use is the reminder.</td></tr>
-<tr data-chunk="1"><td class="n">10</td><td class="ur" dir="rtl" lang="ur">عنقریب نصیحت مانے گا جو ڈرتا ہے</td><td class="en">He will heed who feareth,</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">11</td><td class="ur" dir="rtl" lang="ur">اور اس سے وہ بڑا بدبخت دور رہے گا،</td><td class="en">But the most hapless will flout it,</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">12</td><td class="ur" dir="rtl" lang="ur">جو سب سے بڑی آگ میں جائے گا</td><td class="en">He who will be flung to the great Fire</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">13</td><td class="ur" dir="rtl" lang="ur">پھر نہ اس میں مرے اور نہ جیے</td><td class="en">Wherein he will neither die nor live.</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">14</td><td class="ur" dir="rtl" lang="ur">بیشک مراد کو پہنچا جو ستھرا ہوا</td><td class="en">He is successful who groweth,</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">15</td><td class="ur" dir="rtl" lang="ur">اور اپنے رب کا نام لے کر نماز پڑھی</td><td class="en">And remembereth the name of his Lord, so prayeth,</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">16</td><td class="ur" dir="rtl" lang="ur">بلکہ تم جیتی دنیا کو ترجیح دیتے ہو</td><td class="en">But ye prefer the life of the world</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">17</td><td class="ur" dir="rtl" lang="ur">اور آخرت بہتر اور باقی رہنے والی،</td><td class="en">Although the Hereafter is better and more lasting.</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">18</td><td class="ur" dir="rtl" lang="ur">بیشک یہ اگلے صحیفوں میں ہے</td><td class="en">Lo! This is in the former scrolls.</td></tr>
-<tr data-chunk="2" class="hidden"><td class="n">19</td><td class="ur" dir="rtl" lang="ur">ابراہیم اور موسیٰ کے صحیفوں میں،</td><td class="en">The Books of Abraham and Moses.</td></tr>
-</tbody></table>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ سَبِّحِ ٱسْمَ رَبِّكَ ٱلْأَعْلَى</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 1</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5949" onclick="playAyah(5949,this)" aria-label="Play ayah 1">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اپنے رب کے نام کی پاکی بولو جب سے بلند ہے</p><p class="tr-en">Praise the name of thy Lord the Most High,</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">ٱلَّذِى خَلَقَ فَسَوَّىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 2</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5950" onclick="playAyah(5950,this)" aria-label="Play ayah 2">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">جس نے بناکر ٹھیک کیا</p><p class="tr-en">Who createth, then disposeth;</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">وَٱلَّذِى قَدَّرَ فَهَدَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 3</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5951" onclick="playAyah(5951,this)" aria-label="Play ayah 3">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اور جس نے اندازہ پر رکھ کر راہ دی</p><p class="tr-en">Who measureth, then guideth;</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">وَٱلَّذِىٓ أَخْرَجَ ٱلْمَرْعَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 4</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5952" onclick="playAyah(5952,this)" aria-label="Play ayah 4">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اور جس نے چارہ نکالا،</p><p class="tr-en">Who bringeth forth the pasturage,</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">فَجَعَلَهُۥ غُثَآءً أَحْوَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 5</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5953" onclick="playAyah(5953,this)" aria-label="Play ayah 5">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">پھر اسے خشک سیاہ کردیا،</p><p class="tr-en">Then turneth it to russet stubble.</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">سَنُقْرِئُكَ فَلَا تَنسَىٰٓ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 6</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5954" onclick="playAyah(5954,this)" aria-label="Play ayah 6">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اب ہم تمہیں پڑھائیں گے کہ تم نہ بھولو گے</p><p class="tr-en">We shall make thee read (O Muhammad) so that thou shalt not forget</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">إِلَّا مَا شَآءَ ٱللَّهُ إِنَّهُۥ يَعْلَمُ ٱلْجَهْرَ وَمَا يَخْفَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 7</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5955" onclick="playAyah(5955,this)" aria-label="Play ayah 7">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">مگر جو اللہ چاہے بیشک وہ جانتا ہے ہر کھلے اور چھپے کو،</p><p class="tr-en">Save that which Allah willeth. Lo! He knoweth the disclosed and that which still is hidden;</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">وَنُيَسِّرُكَ لِلْيُسْرَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 8</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5956" onclick="playAyah(5956,this)" aria-label="Play ayah 8">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اور ہم تمہارے لیے آسانی کا سامان کردیں گے</p><p class="tr-en">And We shall ease thy way unto the state of ease.</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">فَذَكِّرْ إِن نَّفَعَتِ ٱلذِّكْرَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 9</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5957" onclick="playAyah(5957,this)" aria-label="Play ayah 9">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">تو تم نصیحت فرماؤ اگر نصیحت کام دے</p><p class="tr-en">Therefor remind (men), for of use is the reminder.</p></article>
+<article class="tr-card" data-chunk="1"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">سَيَذَّكَّرُ مَن يَخْشَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 10</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5958" onclick="playAyah(5958,this)" aria-label="Play ayah 10">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">عنقریب نصیحت مانے گا جو ڈرتا ہے</p><p class="tr-en">He will heed who feareth,</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">وَيَتَجَنَّبُهَا ٱلْأَشْقَى</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 11</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5959" onclick="playAyah(5959,this)" aria-label="Play ayah 11">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اور اس سے وہ بڑا بدبخت دور رہے گا،</p><p class="tr-en">But the most hapless will flout it,</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">ٱلَّذِى يَصْلَى ٱلنَّارَ ٱلْكُبْرَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 12</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5960" onclick="playAyah(5960,this)" aria-label="Play ayah 12">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">جو سب سے بڑی آگ میں جائے گا</p><p class="tr-en">He who will be flung to the great Fire</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">ثُمَّ لَا يَمُوتُ فِيهَا وَلَا يَحْيَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 13</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5961" onclick="playAyah(5961,this)" aria-label="Play ayah 13">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">پھر نہ اس میں مرے اور نہ جیے</p><p class="tr-en">Wherein he will neither die nor live.</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">قَدْ أَفْلَحَ مَن تَزَكَّىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 14</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5962" onclick="playAyah(5962,this)" aria-label="Play ayah 14">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">بیشک مراد کو پہنچا جو ستھرا ہوا</p><p class="tr-en">He is successful who groweth,</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">وَذَكَرَ ٱسْمَ رَبِّهِۦ فَصَلَّىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 15</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5963" onclick="playAyah(5963,this)" aria-label="Play ayah 15">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اور اپنے رب کا نام لے کر نماز پڑھی</p><p class="tr-en">And remembereth the name of his Lord, so prayeth,</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">بَلْ تُؤْثِرُونَ ٱلْحَيَوٰةَ ٱلدُّنْيَا</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 16</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5964" onclick="playAyah(5964,this)" aria-label="Play ayah 16">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">بلکہ تم جیتی دنیا کو ترجیح دیتے ہو</p><p class="tr-en">But ye prefer the life of the world</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">وَٱلْـَٔاخِرَةُ خَيْرٌ وَأَبْقَىٰٓ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 17</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5965" onclick="playAyah(5965,this)" aria-label="Play ayah 17">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">اور آخرت بہتر اور باقی رہنے والی،</p><p class="tr-en">Although the Hereafter is better and more lasting.</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">إِنَّ هَٰذَا لَفِى ٱلصُّحُفِ ٱلْأُولَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 18</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5966" onclick="playAyah(5966,this)" aria-label="Play ayah 18">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">بیشک یہ اگلے صحیفوں میں ہے</p><p class="tr-en">Lo! This is in the former scrolls.</p></article>
+<article class="tr-card hidden" data-chunk="2"><div class="tr-div top"></div><div class="tr-ar" dir="rtl" lang="ar">صُحُفِ إِبْرَٰهِيمَ وَمُوسَىٰ</div><div class="tr-div"></div><div class="tr-tabs"><span class="tr-num">Ayat 19</span><span class="tr-tabwrap"><button class="tr-tab on" data-trtab="ur" type="button" onclick="setLang('ur')">Kanz-ul-Iman</button><button class="tr-tab" data-trtab="en" type="button" onclick="setLang('en')">Pickthall</button></span><button class="tr-play" type="button" data-g="5967" onclick="playAyah(5967,this)" aria-label="Play ayah 19">▶</button></div><p class="tr-ur" dir="rtl" lang="ur">ابراہیم اور موسیٰ کے صحیفوں میں،</p><p class="tr-en">The Books of Abraham and Moses.</p></article>
 </section>
 <div class="intro">
 <h2>About this Surah</h2>
@@ -185,6 +195,17 @@ footer a{color:#FF6C00;text-decoration:none}
           <div class="tpill"><button id="tpUr" class="on" type="button" onclick="setLang('ur')">اردو</button><button id="tpEn" type="button" onclick="setLang('en')">English</button></div>
         </div>
       </div>
+      <div class="side-box listen">
+        <div class="side-head">Listen &amp; Download</div>
+        <div class="side-body">
+          <label for="selQari">Qari</label>
+          <select id="selQari"><option value="ar.alafasy" selected>Mishary Rashid Alafasy</option><option value="ar.husary">Mahmoud Khalil Al-Husary</option><option value="ar.hudhaify">Ali Al-Hudhaify</option><option value="ar.mahermuaiqly">Maher Al Muaiqly</option><option value="ar.minshawi">Mohamed Siddiq El-Minshawi</option><option value="ar.husarymujawwad">Al-Husary (Mujawwad)</option></select>
+          <audio id="surahAudio" controls preload="none" src="https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/87.mp3"></audio>
+          <div class="au-status" id="auStatus"></div>
+          <a id="dlAudio" class="dlpill" href="https://cdn.islamic.network/quran/audio-surah/128/ar.alafasy/87.mp3" target="_blank" rel="noopener" download>⬇ Audio</a>
+          <p class="au-note" id="dlNote" hidden>Poori Surah download sirf Mishary Alafasy ke liye hai.</p>
+        </div>
+      </div>
     </aside>
   </div>
 </main>
@@ -193,7 +214,7 @@ footer a{color:#FF6C00;text-decoration:none}
 <script>
 let ar=parseInt(getComputedStyle(document.documentElement).getPropertyValue('--ar'))||30;
 function fontStep(d){ar=Math.min(48,Math.max(24,ar+d));document.documentElement.style.setProperty('--ar',ar+'px');}
-function setLang(l){document.body.dataset.lang=l;document.getElementById('langUr').classList.toggle('active',l==='ur');document.getElementById('langEn').classList.toggle('active',l==='en');var u=document.getElementById('tpUr'),e=document.getElementById('tpEn');if(u){u.classList.toggle('on',l==='ur');e.classList.toggle('on',l==='en');}}
+function setLang(l){document.body.dataset.lang=l;document.getElementById('langUr').classList.toggle('active',l==='ur');document.getElementById('langEn').classList.toggle('active',l==='en');var u=document.getElementById('tpUr'),e=document.getElementById('tpEn');if(u){u.classList.toggle('on',l==='ur');e.classList.toggle('on',l==='en');}document.querySelectorAll('[data-trtab]').forEach(function(b){b.classList.toggle('on',b.dataset.trtab===l);});}
 function toggleTheme(){const h=document.documentElement;h.dataset.theme=h.dataset.theme==='dark'?'light':'dark';}
 const TOTAL_CHUNKS=2;
 let shown=1;
@@ -206,6 +227,25 @@ document.getElementById('selSurah').addEventListener('change',function(){locatio
 document.getElementById('selPara').addEventListener('change',function(){location.href='/quran-surah-'+PARA_SURAH[this.value]+'/';});
 document.getElementById('selAyat').addEventListener('change',function(){goAyat(parseInt(this.value,10));});
 document.getElementById('hsearch').addEventListener('keydown',function(e){if(e.key==='Enter'){location.href='/quran-pak/';}});
+/* --- audio (islamic.network CDN) --- */
+const RECITERS={"ar.alafasy": {"name": "Mishary Rashid Alafasy", "surah": true}, "ar.husary": {"name": "Mahmoud Khalil Al-Husary", "surah": false}, "ar.hudhaify": {"name": "Ali Al-Hudhaify", "surah": false}, "ar.mahermuaiqly": {"name": "Maher Al Muaiqly", "surah": false}, "ar.minshawi": {"name": "Mohamed Siddiq El-Minshawi", "surah": false}, "ar.husarymujawwad": {"name": "Al-Husary (Mujawwad)", "surah": false}};
+const SURAH_N=87;
+const GSTART=5948;
+const AYAAT=19;
+const ACDN='https://cdn.islamic.network/quran';
+const au=document.getElementById('surahAudio');
+let qari='ar.alafasy';
+let plIdx=0;
+let cardAu=null,cardBtn=null;
+function ayahUrl(r,g){return ACDN+'/audio/128/'+r+'/'+g+'.mp3';}
+function surahUrl(r){return ACDN+'/audio-surah/128/'+r+'/'+SURAH_N+'.mp3';}
+function setStatus(t){const s=document.getElementById('auStatus');if(s){s.textContent=t;}}
+function loadPl(k){plIdx=k;au.src=ayahUrl(qari,GSTART+1+k);setStatus('Ayat '+(k+1)+' / '+AYAAT);}
+function stopCard(){if(cardAu){cardAu.pause();cardAu=null;}if(cardBtn){cardBtn.textContent='▶';cardBtn=null;}}
+function setQari(r){qari=r;stopCard();if(RECITERS[r].surah){au.src=surahUrl(r);setStatus('');}else{loadPl(0);}const dl=document.getElementById('dlAudio'),nt=document.getElementById('dlNote');if(RECITERS[r].surah){dl.href=surahUrl(r);dl.style.display='inline-block';nt.hidden=true;}else{dl.style.display='none';nt.hidden=false;}}
+function playAyah(g,btn){if(cardAu&&cardBtn===btn){cardAu.pause();cardAu=null;cardBtn.textContent='▶';cardBtn=null;return;}stopCard();if(au){au.pause();}cardAu=new Audio(ayahUrl(qari,g));cardBtn=btn;btn.textContent='⏸';cardAu.play();cardAu.onended=function(){btn.textContent='▶';cardAu=null;cardBtn=null;};}
+if(au){au.addEventListener('ended',function(){if(!RECITERS[qari].surah&&plIdx<AYAAT-1){loadPl(plIdx+1);au.play();}else{setStatus('');}});au.addEventListener('play',function(){stopCard();});}
+document.getElementById('selQari').addEventListener('change',function(){setQari(this.value);});
 </script>
 </body>
 </html>
