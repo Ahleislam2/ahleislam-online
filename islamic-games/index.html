@@ -20,27 +20,40 @@ a.game-card h3 { color: var(--green); }
 .play-btn { display: inline-block; margin-top: 12px; padding: 11px 26px; border-radius: 999px; background: var(--green); color: #fff; font-weight: 600; }
 a.game-card:hover .play-btn { background: var(--green-dark); }
 </style>
+<style>
+body{background:#fff;font-family:Arial,Helvetica,sans-serif}
+h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#000}
+.games-wrap h1{font-family:Arial,Helvetica,sans-serif;color:#000}
+.eyebrow{color:#FF6C00}
+a.game-card h3{color:#000}
+.play-btn{background:#FF6C00}
+a.game-card:hover .play-btn{background:#B34700}
+.card{border:1px solid #E5E5E5}
+</style>
 </head>
 <body>
-<header class="top">
-  <div class="wrap">
-    <div class="brand-row">
-      <div class="brand">
-        <img class="brand-logo" src="../assets/logo.png" alt="Ahl-e-Islam — ahleislam.online logo">
-        <p class="brand-tag">Namaz • Zakat • Hijri • Quran • Hadith — one clean site, authentic references</p>
-      </div>
-      <nav class="nav" aria-label="Sections">
-        <a href="/">Home</a>
-        <a href="/namaz">Namaz</a>
-        <a href="/islamic-calendar">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak">Quran Pak</a>
-        
-      </nav>
-    </div>
-  </div>
-</header>
+<div class="strip"><div class="wrap">
+<span class="date" id="greg-date">…</span>
+<span class="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+
+</div></div>
+<div class="masthead"><div class="wrap">
+<a class="brand" href="/"><img src="../assets/logo.png" alt="Ahl-e-Islam"></a>
+<div class="adslot">Ahl-e-Islam — ahleislam.online</div>
+</div></div>
+<nav class="black"><div class="wrap">
+<a href="/">⌂ Home</a>
+<a href="/today">Today</a>
+<a href="/quran-pak">Quran Pak</a>
+<a class="home" href="/islamic-games/">Quiz</a>
+<a href="/blog/">Blog</a>
+<a href="/islamic-images/">Images</a>
+<a href="/magazine/">Magazine</a>
+<a class="dl" href="/magazine/">⬇ Download Magazine</a>
+</div></nav>
+<div class="crumb"><div class="wrap">
+<b>Home / Quiz</b>
+</div></div>
 <main class="wrap games-wrap">
   <span class="eyebrow">Khelein aur Seekhein</span>
   <h1>Islamic Games</h1>
@@ -54,32 +67,7 @@ a.game-card:hover .play-btn { background: var(--green-dark); }
   </div>
   <p class="sub" style="margin-top:24px">Games sirf seekhne ke liye hain — deeni masaail ke liye apne ulama se ruju karein.</p>
 </main>
-<footer>
-  <div class="wrap foot-grid">
-    <div>
-      <h3>Ahl-e-Islam</h3>
-      <p>Ahl-e-Islam (ahleislam.online) — an evergreen Islamic tools and learning site. No account needed to use the tools.</p>
-    </div>
-    <div>
-      <h3>Sections</h3>
-      <nav aria-label="Footer sections">
-        <a href="/">Home</a>
-        <a href="/namaz">Namaz</a>
-        <a href="/islamic-calendar">Islamic Calendar</a>
-        
-        
-        <a href="/quran-pak">Quran Pak</a>
-        
-      </nav>
-    </div>
-    <div>
-      <h3>Method &amp; honesty</h3>
-      <p>Games me di gayi maloomat aam Islami maloomat hai. Hadith wale pages par sirf book + number ke sath verified hadith shaya hoti hai.</p>
-    </div>
-  </div>
-  <div class="wrap foot-bottom">
-    <p>© 2026 Ahl-e-Islam — ahleislam.online</p>
-  </div>
-</footer>
+<footer>© 2026 Ahl-e-Islam — ahleislam.online</footer>
+<script>document.getElementById('greg-date').textContent = new Date().toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'});</script>
 </body>
 </html>
