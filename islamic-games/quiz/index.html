@@ -172,6 +172,8 @@ html[dir="rtl"] .hadith-feat { border-left: none; border-right: 4px solid var(--
 .q-progress { height: 8px; background: var(--green-soft); border-radius: 99px; overflow: hidden; margin-bottom: 20px; }
 .q-progress .bar { height: 100%; background: var(--gold); width: 0%; transition: width .3s; }
 .q-text { font-size: 1.25rem; font-weight: 600; margin: 0 0 18px; line-height: 1.5; }
+.q-img{width:100%;max-height:230px;object-fit:cover;border-radius:12px;border:1px solid #E5E5E5;display:block;margin:0 0 16px;background:#FFE8D6}
+.q-img-cap{font-size:.82rem;color:#5c6b60;margin:-10px 0 14px}
 .q-opts { display: grid; gap: 10px; }
 .q-opt { text-align: left; padding: 13px 16px; border: 2px solid #d3e2d8; border-radius: 12px; background: #fff; font-size: 1.02rem; cursor: pointer; font-family: "Inter", sans-serif; }
 .q-opt:hover:not(:disabled) { border-color: var(--green); background: var(--green-soft); }
@@ -273,7 +275,8 @@ h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#000}
 .quiz-card h2{font-family:Arial,Helvetica,sans-serif;color:#000}
 .quiz-card{border:1px solid #E5E5E5;box-shadow:0 2px 12px rgba(0,0,0,.12)}
 .q-opt:hover:not(:disabled){border-color:#FF6C00;background:#FFE8D6}
-.q-opt.correct{border-color:#FF6C00;background:#FFE8D6}
+.q-opt.correct{border-color:#2E7D32;background:#E6F4EA}
+.q-opt.wrong{border-color:#C62828;background:#FDECEA}
 .q-progress{background:#FFE8D6}
 .q-progress .bar{background:#FF6C00}
 .q-explain{background:#FFE8D6;border-left-color:#FF6C00}
@@ -320,6 +323,8 @@ h1,h2,h3{font-family:Arial,Helvetica,sans-serif;color:#000}
     <div id="quiz-play" style="display:none">
       <div class="q-meta"><span id="q-count">Sawal 1 / 10</span><span id="q-score">Score: 0</span></div>
       <div class="q-progress"><div class="bar" id="q-bar"></div></div>
+      <img class="q-img" id="q-img" src="" alt="">
+      <div class="q-img-cap" id="q-img-cap"></div>
       <p class="q-text" id="q-text">…</p>
       <div class="q-opts" id="q-opts"></div>
       <div class="q-explain" id="q-explain"></div>
@@ -1444,18 +1449,82 @@ var BANK = [
 {q:"Hazrat Ali RA Hazrat Muhammad ﷺ ke kya lagte the?",o:["Chacha","Chacha zad bhai aur damad","Mamu","Sasur"],a:1,e:"Hazrat Ali RA Hazrat Muhammad ﷺ ke chacha zad bhai the aur un ki beti Fatima RA se nikah ki wajah se damad bhi the."},
 {q:"Jang-e-Badr me Musalmanon ka jhanda kis ke paas tha?",o:["Hamza RA","Mus'ab ibn Umayr RA","Ali RA","Zaid RA"],a:1,e:"Jang-e-Badr me Musalmanon ka jhanda Mus'ab ibn Umayr RA ke paas tha."}
 ];
-function dayOfYear(d){ return Math.floor((d - new Date(d.getFullYear(),0,0)) / 86400000); }
-function todaysSet(){
-  var start = dayOfYear(new Date()) % BANK.length, out = [];
-  for (var i = 0; i < 10; i++) out.push(BANK[(start + i) % BANK.length]);
+/* Ahl-e-Islam Quiz — har sawal ke sath pic + random tarteeb (v2)
+   Pic: 1104 alag pics possible nahi — is liye har sawal ko live gallery
+   ki 48 pics me se aik pic milti hai: pehle sawal ke lafz (keyword),
+   phir us ki category ka pool. Wahi sawal = hamesha wahi pic.
+   Batch 3 ki 24 pics (zakat, dua-hands, hajj, books) abhi live nahi hain
+   (404) — wo batch 3 upload ke baad pools me add hongi.
+   Random: roz ka set tareekh (YYYYMMDD) se seed hota hai — har roz
+   naya random set, aik round me koi repeat nahi, aik din me sab ko
+   wahi set. Jawab (options) ki tarteeb waisi hi rehti hai. */
+
+var IMG_BASE = "/assets/images/gallery-quiz/";
+
+var CAT_POOLS = {
+  "Quran": ["quran-rehal-gold-01.webp", "quran-rehal-window-02.webp", "quran-rehal-night-04.webp", "quran-roses-beads-03.webp", "calligraphy-allah-gold-01.webp", "calligraphy-allah-emerald-02.webp", "calligraphy-allah-parchment-03.webp", "prayer-beads-wood-01.webp"],
+  "Pillars & Worship": ["prayer-mat-velvet-01.webp", "prayer-mat-mosque-02.webp", "prayer-mat-window-03.webp", "wudu-fountain-01.webp", "wudu-tap-marble-02.webp", "masjid-ablution-fountain-04.webp", "ramadan-lanterns-gold-01.webp", "dates-iftar-bowl-02.webp"],
+  "Seerah": ["kaaba-night-01.webp", "kaaba-golden-door-02.webp", "makkah-skyline-03.webp", "madina-green-dome-01.webp", "madina-courtyard-02.webp", "mosque-door-carved-01.webp", "mosque-door-arch-03.webp", "minarets-skyline-02.webp"],
+  "Islamic Months & Festivals": ["ramadan-lanterns-gold-01.webp", "ramadan-lanterns-window-02.webp", "ramadan-lanterns-iftar-03.webp", "eid-crescent-lights-01.webp", "eid-gifts-dates-02.webp", "crescent-moon-masjid-01.webp", "crescent-moon-desert-02.webp", "sehri-table-02.webp"],
+  "Sahaba & History": ["makkah-skyline-03.webp", "madina-courtyard-02.webp", "mosque-door-carved-01.webp", "mosque-window-stained-02.webp", "astrolabe-brass-01.webp", "stars-observatory-02.webp", "geometric-pattern-emerald-01.webp", "arabesque-floral-gold-01.webp"],
+  "General Islamic Knowledge": ["masjid-dome-sunset-01.webp", "masjid-interior-arches-02.webp", "masjid-courtyard-night-03.webp", "minaret-closeup-01.webp", "minaret-sunset-03.webp", "dome-gold-finial-02.webp", "geometric-pattern-blue-02.webp", "arch-tile-details-01.webp"],
+  "Hadith & Manners": ["prayer-beads-wood-01.webp", "calligraphy-allah-parchment-03.webp", "mosque-window-stained-02.webp", "arch-tile-details-01.webp", "geometric-pattern-terracotta-03.webp", "arabesque-floral-blue-02.webp", "masjid-interior-arches-02.webp", "crescent-moon-clouds-03.webp"],
+  "Prophets": ["crescent-moon-desert-02.webp", "crescent-moon-clouds-03.webp", "stars-observatory-02.webp", "astrolabe-brass-01.webp", "masjid-dome-sunset-01.webp", "minarets-skyline-02.webp", "crescent-moon-masjid-01.webp", "madina-green-dome-01.webp"]
+};
+
+/* Keyword rules — pehla match jeetta hai. Zakat / Dua / Hajj ke liye
+   asal pics batch 3 me hain, is liye abhi qareebi live pic use hoti hai. */
+var KEY_RULES = [
+  [/makkah|kaaba|kaba|baitullah/i, ["kaaba-night-01.webp", "kaaba-golden-door-02.webp", "makkah-skyline-03.webp"]],
+  [/madina|nabawi/i, ["madina-green-dome-01.webp", "madina-courtyard-02.webp"]],
+  [/ramzan|ramadan|roza|sehri|iftar/i, ["ramadan-lanterns-gold-01.webp", "ramadan-lanterns-window-02.webp", "ramadan-lanterns-iftar-03.webp", "dates-iftar-bowl-02.webp", "sehri-table-02.webp", "iftar-dates-milk-01.webp"]],
+  [/eid/i, ["eid-crescent-lights-01.webp", "eid-gifts-dates-02.webp"]],
+  [/hajj|umrah/i, ["kaaba-night-01.webp", "kaaba-golden-door-02.webp", "makkah-skyline-03.webp"]],
+  [/zakat/i, ["masjid-courtyard-night-03.webp", "geometric-pattern-emerald-01.webp"]],
+  [/wudu|wazu/i, ["wudu-fountain-01.webp", "wudu-tap-marble-02.webp", "masjid-ablution-fountain-04.webp"]],
+  [/namaz|salah/i, ["prayer-mat-velvet-01.webp", "prayer-mat-mosque-02.webp", "prayer-mat-window-03.webp", "masjid-interior-arches-02.webp"]],
+  [/quran|surah|ayat/i, ["quran-rehal-gold-01.webp", "quran-rehal-window-02.webp", "quran-rehal-night-04.webp", "quran-roses-beads-03.webp", "calligraphy-allah-gold-01.webp"]],
+  [/dua/i, ["prayer-beads-wood-01.webp", "crescent-moon-masjid-01.webp"]],
+  [/masjid|mosque/i, ["masjid-dome-sunset-01.webp", "masjid-interior-arches-02.webp", "masjid-courtyard-night-03.webp", "minaret-closeup-01.webp"]],
+  [/chand|crescent/i, ["crescent-moon-masjid-01.webp", "crescent-moon-desert-02.webp", "crescent-moon-clouds-03.webp"]]
+];
+
+function pickImage(item, bankIndex) {
+  var q = item.q || "";
+  for (var i = 0; i < KEY_RULES.length; i++) {
+    if (KEY_RULES[i][0].test(q)) {
+      var pool = KEY_RULES[i][1];
+      return IMG_BASE + pool[bankIndex % pool.length];
+    }
+  }
+  var cat = CAT_POOLS[item.cat] || CAT_POOLS["General Islamic Knowledge"];
+  return IMG_BASE + cat[bankIndex % cat.length];
+}
+
+/* Har baar bilkul random set — har load par naya shuffle. */
+function randomSet(BANK) {
+  var idxs = BANK.map(function (_, i) { return i; });
+  for (var i = idxs.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = idxs[i]; idxs[i] = idxs[j]; idxs[j] = tmp;
+  }
+  var out = [];
+  for (var k = 0; k < 10; k++) out.push({ item: BANK[idxs[k]], bi: idxs[k] });
   return out;
 }
-var set = todaysSet(), idx = 0, score = 0;
+
+var set = randomSet(BANK), idx = 0, score = 0;
 var startEl = document.getElementById('quiz-start'), playEl = document.getElementById('quiz-play'), resEl = document.getElementById('quiz-result');
 var d = new Date();
-document.getElementById('quiz-date-line').textContent = "Aaj ka set • " + d.toLocaleDateString('en-GB', {day:'numeric', month:'long', year:'numeric'}) + " • 10 sawal";
+document.getElementById('quiz-date-line').textContent = "Har baar naya random set • 10 sawal";
 function show(i){
-  var item = set[i];
+  var item = set[i].item;
+  var bi = set[i].bi;
+  var imgEl = document.getElementById('q-img');
+  imgEl.src = pickImage(item, bi);
+  if (i + 1 < set.length) { var pre = new Image(); pre.src = pickImage(set[i+1].item, set[i+1].bi); }
+  imgEl.alt = item.cat + ' — Islamic Quiz';
+  document.getElementById('q-img-cap').textContent = 'Pic: ' + pickImage(item, bi).split('/').pop();
   document.getElementById('q-count').textContent = "Sawal " + (i + 1) + " / 10";
   document.getElementById('q-score').textContent = "Score: " + score;
   document.getElementById('q-bar').style.width = (i * 10) + "%";
