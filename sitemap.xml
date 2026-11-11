@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://ahleislam.online/</loc>
     <changefreq>daily</changefreq>
@@ -660,8 +660,24 @@
   </url>
   <url>
     <loc>https://ahleislam.online/blog/darood-e-taj/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://ahleislam.online/assets/images/darood-e-taj-3p-1.webp</image:loc>
+      <image:title>Darood-e-Taj full Arabic text page 1 of 3</image:title>
+      <image:caption>Darood-e-Taj — mukammal Arabic text, page 1 of 3 (verses 1-4)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ahleislam.online/assets/images/darood-e-taj-3p-2.webp</image:loc>
+      <image:title>Darood-e-Taj full Arabic text page 2 of 3</image:title>
+      <image:caption>Darood-e-Taj — mukammal Arabic text, page 2 of 3 (verses 5-8)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://ahleislam.online/assets/images/darood-e-taj-3p-3.webp</image:loc>
+      <image:title>Darood-e-Taj full Arabic text page 3 of 3</image:title>
+      <image:caption>Darood-e-Taj — mukammal Arabic text, page 3 of 3 (verses 9-12)</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://ahleislam.online/islamic-images/</loc>
